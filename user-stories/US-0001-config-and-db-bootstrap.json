@@ -1,0 +1,56 @@
+{
+  "id": "US-0001",
+  "title": "Конфигурация и bootstrap БД при старте backend",
+  "status": "ready",
+  "priority": "must",
+  "domain": "config",
+  "project": ["backend"],
+  "target": ["go"],
+  "spec_ref": "architect/specs/config.spec.md",
+  "created": "2026-07-23",
+  "updated": "2026-07-23",
+  "asRole": "оператор продукта (инженер тех.поддержки/аналитик)",
+  "wantGoal": "запустить backend LogAnalyzer одной командой без ручной настройки БД и конфига",
+  "soValue": "продукт поднимается с нуля с разумными дефолтами и готов принимать логи",
+  "context": "MVP-поток backend. SQLite для простоты (Postgres — позже). При старте читается la.conf; при отсутствии создаётся из la.conf.template. При отсутствии SQLite-файла и объектов схемы — авто-создание. Параметры: SOURCE_DB_URL (sqlite:la.db), LISTEN_ADDRESS (localhost), LISTEN_PORT (8888). Node в runtime не используется.",
+  "acceptanceCriteria": [
+    { "id": "AC-1", "criterion": "При старте читается la.conf (по умолчанию ./la.conf, переопределяется env LA_CONF)", "verified": false },
+    { "id": "AC-2", "criterion": "При отсутствии la.conf он создаётся из встроенного la.conf.template с дефолтами SOURCE_DB_URL=sqlite:la.db, LISTEN_ADDRESS=localhost, LISTEN_PORT=8888", "verified": false },
+    { "id": "AC-3", "criterion": "Пустое/отсутствующее поле в la.conf принимает значение по умолчанию", "verified": false },
+    { "id": "AC-4", "criterion": "Backend подключается к БД по SOURCE_DB_URL; scheme sqlite: открывает SQLite-файл (создаёт при отсутствии)", "verified": false },
+    { "id": "AC-5", "criterion": "При отсутствии объектов схемы они создаются автоматически (миграции); повторный запуск идемпотентен", "verified": false },
+    { "id": "AC-6", "criterion": "HTTP слушает на LISTEN_ADDRESS:LISTEN_PORT и отвечает GET /healthz -> {\"status\":\"ok\"}", "verified": false },
+    { "id": "AC-7", "criterion": "Graceful shutdown по SIGINT/SIGTERM", "verified": false },
+    { "id": "AC-8", "criterion": "go build/vet/gofmt/test -race/cover — зелёные", "verified": false }
+  ],
+  "nonFunctionalRequirements": [
+    "SQLite-драйвер — чистый Go (modernc.org/sqlite), без CGo",
+    "Формат la.conf — KEY=VALUE, парсинг stdlib",
+    "Секреты не в репозитории; la.conf и la.db в .gitignore",
+    "Postgres не реализуется (зарезервировать разбор scheme postgres://)",
+    "Изолированные тесты через t.TempDir(); HTTP-проверка через net/http клиент"
+  ],
+  "dependencies": [],
+  "openQuestions": [
+    "Структура таблицы logs — в ЮС приёма/парсинга логов (миграция 0002)",
+    "Формат/драйвер Postgres — отдельная ЮС позже"
+  ],
+  "trace": {
+    "spec": "architect/specs/config.spec.md",
+    "code": [
+      "release/backend/go/internal/config/config.go",
+      "release/backend/go/internal/config/la.conf.template",
+      "release/backend/go/internal/db/db.go",
+      "release/backend/go/internal/db/migrations.go",
+      "release/backend/go/internal/server/server.go",
+      "release/backend/go/cmd/devagent/main.go"
+    ],
+    "tests": [
+      "release/backend/go/internal/config/config_test.go",
+      "release/backend/go/internal/db/migrations_test.go",
+      "release/backend/go/internal/server/server_test.go"
+    ],
+    "changelog": "changelog/CHANGELOG.md#[0.1.0]",
+    "release": "release/backend/go/build/devagent"
+  }
+}

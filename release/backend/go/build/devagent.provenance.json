@@ -1,0 +1,80 @@
+{
+  "name": "devagent",
+  "version": "0.6.0",
+  "spec": ["architect/specs/config.spec.md", "architect/specs/ingestion.spec.md", "architect/specs/viewer.spec.md"],
+  "spec_version": {"config": "0.1.0", "ingestion": "0.1.0", "viewer": "0.3.0"},
+  "us_ref": ["US-0001", "US-0002", "US-0003", "US-0004", "US-0005", "US-0006"],
+  "go_version": "go1.26.2 linux/amd64",
+  "go_path": "/usr/local/go/bin/go",
+  "built_at": "2026-07-24T02:06:00Z",
+  "checksum_sha256": "9ba67b34299ee65d29ca52a6ca3cc3dc21bc30281b4a1b1384f0375fb37241c0",
+  "size_bytes": 23205624,
+  "deps_added": ["github.com/saintfish/chardet", "golang.org/x/text"],
+  "features": [
+    "config la.conf (KEY=VALUE, create-from-template; MAX_FILE_SIZE/MAX_FILE_COUNT/LA_DEFAULT_TZ/LA_PARSERS_DIR/LA_POSTPROCESSORS_DIR)",
+    "sqlite bootstrap (modernc.org/sqlite, auto-create, DSN pragmas foreign_keys=ON/journal_mode=WAL/busy_timeout на каждом соединении пула)",
+    "migrations 0001 (la_meta), 0002 (t_files_upload/t_files_analyze/t_log_entries), 0003 (t_view_filters/t_view_highlights), 0004 (t_view_presets/t_annotations) — FK CASCADE по upload_id (entry-pin file_analyze_id/entry_id БЕЗ FK — dangling допускается)",
+    "ingestion: multipart upload (one or several files per request), streaming MD5 dedup (status=duplicate, duplicate:true, existing_upload_id), MAX_FILE_SIZE/MAX_FILE_COUNT, recursive zip extract",
+    "parser manager: 7 built-in parsers (oracle/weblogic/wls_stdout/java/access/odl/text) + .so plugin loader (LA_PARSERS_DIR); plugin overrides built-in by Name()",
+    "datetime module (layout catalog + locale months; TZ inferred -> LA_DEFAULT_TZ)",
+    "encoding detection (chardet) + decoders (Windows-1251/1252/ISO-8859)",
+    "postprocess manager: base + format inheritors (oracle/weblogic/wls_stdout/odl) + .so plugin loader (LA_POSTPROCESSORS_DIR); summary JSON in t_files_analyze",
+    "REST API: /api/uploads (multi-file), /api/files (16-col scanFileRows — фикс 500), /api/files/{id}/entries (filters level/from/to/q), /api/parsers, /api/stats, /api/uploads/{id}/search|correlate (mode=text|regex + attrs)|timeline|lexemes|histogram|histogram-by-file, filters/highlights/presets/annotations CRUD, view-state clear (НЕ затрагивает presets/annotations)",
+    "REGEXP scalar function (modernc RegisterScalarFunction, package-level sync.Once + sync.Map кеш *regexp.Regexp); search/correlate mode=regex — OR по полям, невалидный паттерн -> 400; attrs=k1:v1,k2:v2 -> json_extract LIKE (NULL-ключ исключается); в correlate предикаты в общем where (COUNT-safe)",
+    "correlate (US-0005): GET /api/uploads/{id}/correlate — объединённый кросс-файл поток, JOIN t_log_entries×t_files_analyze за filename, ORDER BY ts IS NULL, ts, seq; фильтры files/from/to/q/mode/attrs/level; пагинация {items,total,limit,offset} (limit ≤ 1000); рамки одной загрузки",
+    "presets (US-0006): GET/POST /api/uploads/{id}/presets, DELETE /{pid}; {name, snapshot JSON (searchFilters, timeline, highlights, selectedFileIds, correlateMode, pageSize)}; t_view_presets (FK CASCADE)",
+    "annotations (US-0006): GET/POST /api/uploads/{id}/annotations, DELETE /{aid}; entry-pin (file_analyze_id+entry_id, БЕЗ FK) или time-pin (ts); note+color обязательны; ровно один тип пина, смешанное/половинчатое -> 400; t_annotations (FK CASCADE по upload_id, индексы upload_id/ts)",
+    "histogram-by-file (US-0006): GET /api/uploads/{id}/histogram-by-file — GROUP BY bucket, file_analyze_id -> [{bucket, file_analyze_id, count}] для стекированного графика",
+    "static SPA: serves release/frontend/dist/la-frontend/browser/ + SPA-fallback (env LA_FRONTEND_DIST); routes /, /uploads, /viewer/:id, /window/:fileId",
+    "graceful shutdown SIGINT/SIGTERM"
+  ],
+  "plugins_built": {
+    "parsers": ["oracle.so", "weblogic.so", "wls_stdout.so", "java.so", "access.so", "odl.so"],
+    "postprocessors": ["oracle.so", "weblogic.so", "wls_stdout.so", "odl.so"],
+    "buildmode": "go build -buildmode=plugin -tags plugin",
+    "note": "text (parser) и base (postprocessor) остаются built-in в хосте (fallback). Плагины собираются из release/backend/go/parsers|postprocessors/<fmt>/main.go (//go:build plugin), тот же модуль/тулчейн — plugin.Open без ошибок."
+  },
+  "distribution": {
+    "zip": "release/dist/la-0.6.0.zip",
+    "zip_size_bytes": 41246420,
+    "zip_sha256": "cb97ec8fc9450312023dfe0e111e9edf545f746725a6ae1862c5edab0ac92b1d",
+    "prev_zip_retained": "release/dist/la-0.5.0.zip (сохранён)",
+    "zip_builder": "sh/make-dist.sh",
+    "contents": "la-0.6.0/{devagent, la.conf.template, frontend/browser/, parsers/*.so (6), postprocessors/*.so (4), sh/{start,stop,status}-la.sh, docs/{README,INSTALL,USAGE}.md}",
+    "nfr": "только ZIP, без инсталлятора; Node.js только build-time (Angular dist), в runtime не нужен; один процесс backend (API + статика)"
+  },
+  "frontend_0_6_0": {
+    "search_mode_attrs": "режим text/regex + поле attrs в поиске; чипы с бейджами [regex]/[attrs:…]; activeSearchMode/activeSearchAttrs -> correlate-table (searchMode/searchAttrs inputs) -> api.correlate",
+    "stacked_chart": "components/stacked-chart/ (StackedChartComponent): агрегирует HistogramByFilePoint[] в стекированные rect-ы по бакету; цвет из FILE_PALETTE по индексу в fileIds (цикл %len при >10 файлов); time-pin аннотации — вертикальные маркеры через bucketOf(ts,bucket); только в режиме корреляции (effect перегружает по correlateMode/selectedFileIds/timeline/stackedBucket)",
+    "annotation_panel": "components/annotation-panel/ (AnnotationPanelComponent, presentational): список (тип пина, цель, заметка, цвет, удалить) + форма time-pin; entry-pin — кнопка 📌 в строке таблицы -> onPinEntry -> createAnnotation; dangling -> бейдж «вне страницы/удалена»",
+    "preset_bar": "components/preset-bar/ (PresetBarComponent, dumb): select + загрузить/удалить + имя + сохранить; emits load/save/delete; snapshot сборка/восстановление в ViewerComponent",
+    "palette": "components/palette.ts — FILE_PALETTE (10 цветов) + fileColor(ids,id); импортируется correlate-table и stacked-chart (без дублирования); per-file-chart сохраняет свою 8-цветную палитру",
+    "viewer_wiring": "сигналы presets/annotations/histByFile/stackedBucket + fileNames computed; effect перегрузки stacked; savePreset/loadPreset/deletePreset; addAnnotation/removeAnnotation/onPinEntry; loadSavedState грузит presets+annotations",
+    "api_service": "search/correlate +mode/attrs; histogramByFile; listPresets/createPreset/deletePreset; listAnnotations/createAnnotation/deleteAnnotation",
+    "models": "PresetSnapshot/Preset/Annotation/HistogramByFilePoint; SearchRule.mode/attrs",
+    "tests": "stacked-chart (5), annotation-panel (4), preset-bar (5), api.service.spec +8; ng test 40/40"
+  },
+  "hotfix_0_6_0": {
+    "scanFileRows_500": "internal/server/helpers.go scanFileRows сканировал 13 приёмников vs 16 колонок getFiles-SELECT -> rows.Scan panic -> 500 на каждом GET /api/files?upload_id= (пустой селектор файлов). Выровнен под 16 колонок (parsed_at/pp_status/error как sql.NullString). Регрессия: TestGetFiles. Воспроизведено на alert_orclcdb.log пользователя.",
+    "footer_aggregates": "PRAGMA foreign_keys=ON через db.Exec — только одно соединение пула -> CASCADE не срабатывал на остальных -> getStats COUNT не менялся после delete. Перенесено в DSN ?_pragma=foreign_keys(1) (per-connection).",
+    "ui_rename": "«Подкраска» -> «Подсветить» (5 вхождений фронта + USAGE.md); исторические артефакты не переписывались."
+  },
+  "verification": {
+    "go_build": "ok", "go_vet": "ok", "gofmt": "clean",
+    "go_test_race": "ok (config/db/ingest/parser/postprocess/server) — 9 новых/расширенных: TestGetFiles, TestSearchRegex, TestSearchAttrs, TestCorrelateRegex, TestHistogramByFile, TestPresetsCRUD, TestAnnotationsCRUD, TestREGEXPRegistrationIdempotent, TestDeleteUploadCascade (presets/annotations -> [] после delete)",
+    "frontend_ng_build": "ok (~80 kB transfer initial; lazy chunk viewer-component с 3 новыми компонентами)",
+    "frontend_ng_test": "40/40 success (ChromeHeadless)",
+    "zip_smoke_e2e": "ok: распаковка 0.6.0 -> start (0.6.0, 10 .so plugin.Open) -> upload oracle alert_orclcdb.log (6217 зап.) -> GET /api/files?upload_id= 200 непустой (регрессия 500) -> search?mode=regex&q=ORA-[0-9]+ 91 hit -> q=[bad( 400 -> search?mode=text&q=ORA 100 -> correlate?attrs=level:ERROR 200 {items,total} COUNT-safe -> histogram-by-file?bucket=hour 826 точек sum=6217 (=record_count) -> POST time-pin/entry-pin annotation 201 + mixed 400 -> GET annotations 2 -> POST preset 201 -> GET presets 1 -> DELETE upload 204 + stats.file_count ↓ -> GET presets/annotations [] (CASCADE) -> /viewer/:id 200 <app-root> (SPA-fallback)"
+  },
+  "notes": [
+    "MVP: входящий файл читается в limitedBuffer (для zip); true-streaming без буфера в RAM — TODO (NFR соблюдён частично, лимит защищает).",
+    "postgres-парсер отложен (out_of_scope: образца нет).",
+    "POST /api/uploads поддерживает несколько файлов одновременно; frontend пока шлёт по одному (#2 — отложено пользователем).",
+    "env-override полей конфига (LISTEN_PORT/SOURCE_DB_URL) — TODO (#4 — отложено пользователем); smoke использует дефолт 8888.",
+    "Плагины .so собраны и входят в ZIP; add/modify .so + restart — без пересборки бинарника и без повторного развёртывания.",
+    "REGEXP — серверная скалярная функция; sync.Once критичен (без него 2-й db.Open падает «already registered»); кеш *regexp.Regexp процесс-глобальный. json_extract (JSON1) встроен в modernc; NULL-ключ -> исключение (требуемое).",
+    "correlate: записи без ts — в конце потока; regex/attrs-предикаты в общем where (COUNT-safe); q — LIKE/REGEXP (FTS5 — отдельная ЮС).",
+    "Аннотации entry-pin БЕЗ FK — dangling допускается (переживает re-ингест файла); CASCADE только по upload_id. Пресет — снимок на момент сохранения (правки не синхронизируются). deleteViewState НЕ затрагивает presets/annotations.",
+    "0.6.0 — пресеты/аннотации/regex-attrs/стекированный график (US-0006) + хотфикс 500 + переименование UI; спецификация viewer.spec.md обновлена до 0.3.0 (us_ref +US-0006, секции presets/annotations, mode/attrs, histogram-by-file, миграция 0004 + таблицы, notes, узлы PR/AN/SC)."
+  ]
+}

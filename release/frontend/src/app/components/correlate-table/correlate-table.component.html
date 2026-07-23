@@ -1,0 +1,85 @@
+<section class="correlate">
+  <header class="correlate__header">
+    <div class="correlate__title">
+      <span class="correlate__name">Корреляция (общий таймлайн)</span>
+      <span class="correlate__meta muted small">
+        {{ total() }} записей · {{ fileIds.length }} файл(ов) · упорядочено по ts кросс-файл
+      </span>
+    </div>
+    <div class="correlate__actions">
+      <button type="button" class="btn btn--sm btn--ghost" (click)="showChart.set(!showChart())">
+        {{ showChart() ? 'скрыть график' : 'показать график' }}
+      </button>
+      <button type="button" class="btn btn--sm btn--ghost" (click)="load()">обновить</button>
+    </div>
+  </header>
+
+  @if (showChart()) {
+    <app-per-file-chart
+      [dataInput]="histogram()"
+      [bucketInput]="bucket()"
+      (bucketChange)="onBucket($event)"
+    ></app-per-file-chart>
+  }
+
+  @if (error()) {
+    <div class="alert alert--error small">{{ error() }}</div>
+  }
+
+  <div class="correlate__pagesize">
+    <label>строк на странице:
+      <select [ngModel]="limit()" (ngModelChange)="setLimit(+$event)">
+        <option [ngValue]="25">25</option>
+        <option [ngValue]="50">50</option>
+        <option [ngValue]="100">100</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-ts">ts</th>
+          <th class="col-file">файл</th>
+          <th class="col-level">level</th>
+          <th class="col-comp">component</th>
+          <th>message</th>
+          <th class="col-raw">raw</th>
+          <th class="col-pin">📌</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if (loading()) {
+          <tr><td colspan="7" class="muted">загрузка…</td></tr>
+        }
+        @else if (items().length === 0) {
+          <tr><td colspan="7" class="muted">нет записей.</td></tr>
+        }
+        @for (e of items(); track e.id) {
+          <tr [style.background]="rowColor(e) ? rowColor(e)! + '20' : null">
+            <td class="col-ts">{{ e.ts_raw || e.ts || '—' }}</td>
+            <td class="col-file">
+              <span class="file-swatch" [style.background]="fileColor(e.file_analyze_id)" [title]="e.filename"></span>
+              <span class="file-name" [style.color]="fileColor(e.file_analyze_id)">{{ e.filename }}</span>
+            </td>
+            <td class="col-level">{{ e.level || '—' }}</td>
+            <td class="col-comp">{{ e.component || '—' }}</td>
+            <td [innerHTML]="highlightText(e.message)"></td>
+            <td class="col-raw muted small" [innerHTML]="highlightText(e.raw_line)"></td>
+            <td class="col-pin">
+              <button type="button" class="pin-btn" title="закрепить аннотацию на записи"
+                (click)="pinEntry.emit({ file_analyze_id: e.file_analyze_id, entry_id: e.id, ts: e.ts ?? null })">📌</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <footer class="correlate__pager">
+    <button type="button" class="btn btn--sm" [disabled]="offset() === 0" (click)="prev()">← prev</button>
+    <span class="muted small">{{ offset() }}–{{ pageEnd() }} из {{ total() }}</span>
+    <button type="button" class="btn btn--sm" [disabled]="offset() + limit() >= total()" (click)="next()">next →</button>
+  </footer>
+</section>

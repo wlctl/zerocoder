@@ -1,0 +1,43 @@
+<May 16, 2018 6:07:27 PM> <INFO> <NodeManager> <Starting WebLogic server with command line: D:\oracle\wls\config\1036\user_projects\domains\test_domain\bin\startWebLogic.cmd >
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: ProgramData=C:\ProgramData>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: USERPROFILE=C:\WINDOWS\system32\config\systemprofile>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: MAVEN_HOME=D:\maven>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: ProgramFiles(x86)=C:\Program Files (x86)>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: VBOX_MSI_INSTALL_PATH=d:\Oracle\VirtualBox\>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: JAVA_OPTIONS=-Dweblogic.system.BootIdentityFile=D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\proxy\data\nodemanager\boot.properties -Dweblogic.nodemanager.ServiceEnabled=true -Dweblogic.security.SSL.ignoreHostnameVerification=false -Dweblogic.ReverseDNSAllowed=false>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: SystemDrive=C:>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: TEMP=C:\WINDOWS\TEMP>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: SERVER_NAME=proxy>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: ProgramFiles=C:\Program Files>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: Path=D:\oracle\wls\bin\1036\wlserver_10.3\server\native\win\x64;D:\oracle\wls\bin\1036\wlserver_10.3\server\bin;D:\oracle\jdk\1.7\jre\bin;D:\oracle\jdk\1.7\bin;D:\oracle\wls\bin\1036\wlserver_10.3\server\native\win\x64\oci920_8;C:\ProgramData\Oracle\Java\javapath;d:\Program Files\ImageMagick-7.0.5-Q16;D:\oracle\jdk\jdk-7u17\bin;d:\Program Files\ImageMagick-6.9.7-Q8;C:\Program Files (x86)\Common Files\NetSarang;D:\oracle\Python\Python35-32\Scripts\;D:\oracle\Python\Python35-32\;D:\oracle\client\product\12.1.0\client_1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;d:\oracle\admin;d:\oracle\admin\shortcuts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Program Files (x86)\GnuWin32\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\utils\admin;C:\Program Files (x86)\Skype\Phone\;d:\Program Files (x86)\Tesseract-OCR;C:\utils\clink;D:\maven\bin;D:\Git\GitClients\TortoiseGit\bin;D:\Program Files (x86)\Calibre2\;C:\utils\openssl\bin;D:\Vagrant\bin;C:\Android;C:\Windows\System32;d:\Git\cmd;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;D:\oracle\nodejs\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: PROCESSOR_REVISION=4701>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: ADMIN_URL=http://192.168.87.1:7001>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: TNS_ADMIN=D:\oracle\admin\TNS_ADMIN>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: USERDOMAIN=WORKGROUP>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: ALLUSERSPROFILE=C:\ProgramData>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: ProgramW6432=C:\Program Files>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 71 Stepping 1, GenuineIntel>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: TESSDATA_PREFIX=d:\Program Files (x86)\Tesseract-OCR\>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: TMP=C:\WINDOWS\TEMP>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: VS140COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: PROCESSOR_ARCHITECTURE=AMD64>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: CommonProgramFiles=C:\Program Files\Common Files>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: M2_HOME=D:\maven>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: OS=Windows_NT>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: FP_NO_HOST_CHECK=NO>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: PROCESSOR_LEVEL=6>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: CommonProgramW6432=C:\Program Files\Common Files>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: configsetroot=C:\WINDOWS\ConfigSetRoot>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: LOCALAPPDATA=C:\WINDOWS\system32\config\systemprofile\AppData\Local>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: COMPUTERNAME=RAV-MOBILE>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: SystemRoot=C:\WINDOWS>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: windir=C:\WINDOWS>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: NUMBER_OF_PROCESSORS=8>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: PSModulePath=C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: PUBLIC=C:\Users\Public>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: USERNAME=RAV-MOBILE$>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: ComSpec=C:\WINDOWS\system32\cmd.exe>
+<May 16, 2018 6:07:28 PM> <FINEST> <NodeManager> <Environment: APPDATA=C:\WINDOWS\system32\config\systemprofile\AppData\Roaming>
+<May 16, 2018 6:07:28 PM> <INFO> <NodeManager> <Working directory is 'D:\oracle\wls\config\1036\user_projects\domains\test_domain'>

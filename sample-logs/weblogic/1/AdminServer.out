@@ -1,0 +1,376 @@
+<May 16, 2018 6:26:08 PM> <INFO> <NodeManager> <Server output log file is 'D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\AdminServer.out'>
+
+ENSURE TO OVERRIDE PLATFORM TO -Dos.name="Windows Server 2008" -Dos.version=6.2 with JVM_OS_VERSION
+.
+.
+JAVA Memory arguments: -Xms256m -Xmx512m -XX:CompileThreshold=8000 -XX:PermSize=128m  -XX:MaxPermSize=512m
+.
+WLS Start Mode=Development
+.
+CLASSPATH=D:\oracle\wls\bin\1036\oracle_common\modules\oracle.jdbc_11.1.1\ojdbc6dms.jar;D:\oracle\wls\bin\1036\patch_wls1036\profiles\default\sys_manifest_classpath\weblogic_patch.jar;D:\oracle\wls\bin\1036\patch_ocp371\profiles\default\sys_manifest_classpath\weblogic_patch.jar;D:\oracle\jdk\1.7\lib\tools.jar;D:\oracle\wls\bin\1036\wlserver_10.3\server\lib\weblogic_sp.jar;D:\oracle\wls\bin\1036\wlserver_10.3\server\lib\weblogic.jar;D:\oracle\wls\bin\1036\modules\features\weblogic.server.modules_10.3.6.0.jar;D:\oracle\wls\bin\1036\wlserver_10.3\server\lib\webservices.jar;D:\oracle\wls\bin\1036\modules\org.apache.ant_1.7.1/lib/ant-all.jar;D:\oracle\wls\bin\1036\modules\net.sf.antcontrib_1.1.0.0_1-0b2/lib/ant-contrib.jar;D:\oracle\wls\bin\1036\oracle_common\soa\modules\commons-cli-1.1.jar;D:\oracle\wls\bin\1036\oracle_common\soa\modules\oracle.soa.mgmt_11.1.1\soa-infra-mgmt.jar;D:\oracle\wls\bin\1036\oracle_common\modules\oracle.jrf_11.1.1\jrf.jar;D:\oracle\wls\bin\1036\wlserver_10.3\common\derby\lib\derbyclient.jar;D:\oracle\wls\bin\1036\wlserver_10.3\server\lib\xqrl.jar
+.
+PATH=D:\oracle\wls\bin\1036\patch_wls1036\profiles\default\native;D:\oracle\wls\bin\1036\patch_ocp371\profiles\default\native;D:\oracle\wls\bin\1036\wlserver_10.3\server\native\win\x64;D:\oracle\wls\bin\1036\wlserver_10.3\server\bin;D:\oracle\wls\bin\1036\modules\org.apache.ant_1.7.1\bin;D:\oracle\jdk\1.7\jre\bin;D:\oracle\jdk\1.7\bin;D:\oracle\wls\bin\1036\wlserver_10.3\server\native\win\x64;D:\oracle\wls\bin\1036\wlserver_10.3\server\bin;D:\oracle\jdk\1.7\jre\bin;D:\oracle\jdk\1.7\bin;D:\oracle\wls\bin\1036\wlserver_10.3\server\native\win\x64\oci920_8;C:\ProgramData\Oracle\Java\javapath;d:\Program Files\ImageMagick-7.0.5-Q16;D:\oracle\jdk\jdk-7u17\bin;d:\Program Files\ImageMagick-6.9.7-Q8;C:\Program Files (x86)\Common Files\NetSarang;D:\oracle\Python\Python35-32\Scripts\;D:\oracle\Python\Python35-32\;D:\oracle\client\product\12.1.0\client_1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;d:\oracle\admin;d:\oracle\admin\shortcuts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Program Files (x86)\GnuWin32\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\utils\admin;C:\Program Files (x86)\Skype\Phone\;d:\Program Files (x86)\Tesseract-OCR;C:\utils\clink;D:\maven\bin;D:\Git\GitClients\TortoiseGit\bin;D:\Program Files (x86)\Calibre2\;C:\utils\openssl\bin;D:\Vagrant\bin;C:\Android;C:\Windows\System32;d:\Git\cmd;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;D:\oracle\nodejs\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;D:\oracle\wls\bin\1036\wlserver_10.3\server\native\win\x64\oci920_8
+.
+***************************************************
+*  To start WebLogic Server, use a username and   *
+*  password assigned to an admin-level user.  For *
+*  server administration, use the WebLogic Server *
+*  console at http:\\hostname:port\console        *
+***************************************************
+starting weblogic with Java version:
+java version "1.7.0_71"
+Java(TM) SE Runtime Environment (build 1.7.0_71-b14)
+Java HotSpot(TM) 64-Bit Server VM (build 24.71-b01, mixed mode)
+Starting WLS with line:
+D:\oracle\jdk\1.7\bin\java -server   -Xms256m -Xmx512m -XX:CompileThreshold=8000 -XX:PermSize=128m  -XX:MaxPermSize=512m -Dweblogic.Name=AdminServer -Djava.security.policy=D:\oracle\wls\bin\1036\wlserver_10.3\server\lib\weblogic.policy -Dweblogic.system.BootIdentityFile=D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\security\boot.properties -Dweblogic.nodemanager.ServiceEnabled=true -Xverify:none  -da -Dplatform.home=D:\oracle\wls\bin\1036\wlserver_10.3 -Dwls.home=D:\oracle\wls\bin\1036\wlserver_10.3\server -Dweblogic.home=D:\oracle\wls\bin\1036\wlserver_10.3\server  -Dcommon.components.home=D:\oracle\wls\bin\1036\oracle_common -Djrf.version=11.1.1 -Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Jdk14Logger -Ddomain.home=D:\oracle\wls\config\1036\user_projects\domains\test_domain -Djrockit.optfile=D:\oracle\wls\bin\1036\oracle_common\modules\oracle.jrf_11.1.1\jrocket_optfile.txt -Doracle.server.config.dir=D:\oracle\wls\config\1036\user_projects\domains\test_domain\config\fmwconfig\servers\AdminServer -Doracle.domain.config.dir=D:\oracle\wls\config\1036\user_projects\domains\test_domain\config\fmwconfig  -Digf.arisidbeans.carmlloc=D:\oracle\wls\config\1036\user_projects\domains\test_domain\config\fmwconfig\carml  -Digf.arisidstack.home=D:\oracle\wls\config\1036\user_projects\domains\test_domain\config\fmwconfig\arisidprovider -Doracle.security.jps.config=D:\oracle\wls\config\1036\user_projects\domains\test_domain\config\fmwconfig\jps-config.xml -Doracle.deployed.app.dir=D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\tmp\_WL_user -Doracle.deployed.app.ext=\- -Dweblogic.alternateTypesDirectory=D:\oracle\wls\bin\1036\oracle_common\modules\oracle.ossoiap_11.1.1,D:\oracle\wls\bin\1036\oracle_common\modules\oracle.oamprovider_11.1.1,D:\oracle\wls\bin\1036\oracle_common\modules\oracle.jps_11.1.1 -Djava.protocol.handler.pkgs=oracle.mds.net.protocol  -Dweblogic.jdbc.remoteEnabled=false  -Dem.oracle.home=D:\oracle\wls\bin\1036\oracle_common -Djava.awt.headless=true -Dweblogic.management.discover=true  -Dwlw.iterativeDev= -Dwlw.testConsole= -Dwlw.logErrorsToConsole= -Dweblogic.ext.dirs=D:\oracle\wls\bin\1036\patch_wls1036\profiles\default\sysext_manifest_classpath;D:\oracle\wls\bin\1036\patch_ocp371\profiles\default\sysext_manifest_classpath  weblogic.Server
+<May 16, 2018 6:26:10 PM MSK> <Info> <Security> <BEA-090905> <Disabling CryptoJ JCE Provider self-integrity check for better startup performance. To enable this check, specify -Dweblogic.security.allowCryptoJDefaultJCEVerification=true> 
+<May 16, 2018 6:26:10 PM MSK> <Info> <Security> <BEA-090906> <Changing the default Random Number Generator in RSA CryptoJ from ECDRBG to FIPS186PRNG. To disable this change, specify -Dweblogic.security.allowCryptoJDefaultPRNG=true> 
+<May 16, 2018 6:26:11 PM MSK> <Info> <WebLogicServer> <BEA-000377> <Starting WebLogic Server with Java HotSpot(TM) 64-Bit Server VM Version 24.71-b01 from Oracle Corporation> 
+<May 16, 2018 6:26:12 PM MSK> <Info> <Management> <BEA-141107> <Version: WebLogic Server 10.3.6.0  Tue Nov 15 08:52:36 PST 2011 1441050 > 
+<May 16, 2018 6:26:14 PM MSK> <Info> <Management> <BEA-141227> <Making a backup copy of the configuration at D:\oracle\wls\config\1036\user_projects\domains\test_domain\config-original.jar.> 
+<May 16, 2018 6:26:15 PM MSK> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STARTING> 
+<May 16, 2018 6:26:15 PM MSK> <Info> <WorkManager> <BEA-002900> <Initializing self-tuning thread pool> 
+<May 16, 2018 6:26:15 PM MSK> <Notice> <LoggingService> <BEA-320400> <The log file D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\AdminServer.log will be rotated. Reopen the log file if tailing has stopped. This can happen on some platforms like Windows.> 
+<May 16, 2018 6:26:15 PM MSK> <Notice> <LoggingService> <BEA-320401> <The log file has been rotated to D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\AdminServer.log00009. Log messages will continue to be logged in D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\AdminServer.log.> 
+<May 16, 2018 6:26:15 PM MSK> <Notice> <Log Management> <BEA-170019> <The server log file D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\AdminServer.log is opened. All server side log events will be written to this file.> 
+May 16, 2018 6:26:23 PM oracle.security.jps.internal.idstore.util.LibOvdUtil pushLdapNamesToLibOvd
+INFO: Pushed ldap name and types info to libOvd. Ldaps : DefaultAuthenticator:idstore.ldap.provideridstore.ldap.
+<May 16, 2018 6:26:25 PM MSK> <Notice> <Security> <BEA-090082> <Security initializing using security realm myrealm.> 
+<May 16, 2018 6:26:26 PM MSK> <Notice> <LoggingService> <BEA-320400> <The log file D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\access.log will be rotated. Reopen the log file if tailing has stopped. This can happen on some platforms like Windows.> 
+<May 16, 2018 6:26:26 PM MSK> <Notice> <LoggingService> <BEA-320401> <The log file has been rotated to D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\access.log00006. Log messages will continue to be logged in D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\access.log.> 
+May 16, 2018 6:26:28 PM oracle.security.jps.JpsStartup start
+INFO: Jps initializing.
+May 16, 2018 6:26:28 PM oracle.security.jps.JpsStartup start
+INFO: Jps started.
+<May 16, 2018 6:26:31 PM MSK> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STANDBY> 
+<May 16, 2018 6:26:31 PM MSK> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STARTING> 
+<May 16, 2018 6:26:32 PM MSK> <Warning> <oracle.as.jmx.framework.generic.spi.BaseJMXFrameworkProviderImpl> <BEA-000000> <The configuration at URI "D:\oracle\wls\config\1036\user_projects\domains\test_domain\config\fmwconfig\mbeans\..\default-keystore.jks" cannot be loaded.> 
+<May 16, 2018 6:26:35 PM MSK> <Warning> <oracle.as.jmx.framework.generic.spi.BaseJMXFrameworkProviderImpl> <BEA-000000> <The configuration at URI "D:\oracle\wls\config\1036\user_projects\domains\test_domain\config\fmwconfig\mbeans\..\default-keystore.jks" cannot be loaded.> 
+<May 16, 2018 6:26:36 PM MSK> <Warning> <Security> <BEA-090668> <Ignored deployment of role "Admin" for resource "type=<url>, application=DMS Application#11.1.1.1.0, contextPath=/dms, uri=/"> 
+<May 16, 2018 6:26:38 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element application in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\em.ear/META-INF/application.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 16, 2018 6:26:38 PM MSK> <Warning> <J2EE> <BEA-160195> <The application version lifecycle event listener oracle.security.jps.wls.listeners.JpsAppVersionLifecycleListener is ignored because the application em is not versioned.> 
+<May 16, 2018 6:26:42 PM MSK> <Warning> <J2EE> <BEA-160140> <Unresolved optional package references (in META-INF/MANIFEST.MF): [Extension-Name: oracle.rules, referenced from: D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\tmp\_WL_user\emai\xalnv4]. Make sure the referenced optional package has been deployed as a library.> 
+<May 16, 2018 6:26:45 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table domain_oracle_oam:token_request_rollup will be ignored.> 
+<May 16, 2018 6:26:45 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table domain_oracle_oam:token_request_rollup_rate will be ignored.> 
+<May 16, 2018 6:26:45 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table domain_oracle_oam:core_token_generation_rollup will be ignored.> 
+<May 16, 2018 6:26:45 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table domain_oracle_oam:core_token_generation_rollup_rate will be ignored.> 
+<May 16, 2018 6:26:45 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table domain_oracle_oam:core_token_validation_rollup will be ignored.> 
+<May 16, 2018 6:26:45 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table domain_oracle_oam:core_token_validation_rollup_rate will be ignored.> 
+<May 16, 2018 6:26:45 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table domain_oracle_oam:partner_request_rollup will be ignored.> 
+<May 16, 2018 6:26:45 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table domain_oracle_oam:partner_request_rollup_rate will be ignored.> 
+<May 16, 2018 6:26:46 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table oracle_oam:token_requests will be ignored.> 
+<May 16, 2018 6:26:46 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table oracle_oam:core_token_generation will be ignored.> 
+<May 16, 2018 6:26:46 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table oracle_oam:core_token_validation will be ignored.> 
+<May 16, 2018 6:26:46 PM MSK> <Warning> <oracle.dms.collector> <DMS-50911> <Duplicated metric table. Metric table oracle_oam:partner_requests will be ignored.> 
+PostInstallConfigIntegration:oracle_ias_farm target auth registration is done.
+PostInstallConfigIntegration:websphere_cell target auth registration is done.
+<May 16, 2018 6:27:06 PM MSK> <Warning> <oracle.adf.share.ADFContext> <BEA-000000> <Automatically initializing a DefaultContext for getCurrent.
+Caller should ensure that a DefaultContext is proper for this use.
+Memory leaks and/or unexpected behaviour may occur if the automatic initialization is performed improperly.
+This message may be avoided by performing initADFContext before using getCurrent().
+For more information please enable logging for oracle.adf.share.ADFContext at FINEST level.> 
+<May 16, 2018 6:27:06 PM MSK> <Warning> <oracle.adf.share.http.ServletADFContext> <BEA-000000> <Found oracle.adf.share.DefaultContext sticking to oldContext, while the current application is em> 
+<May 16, 2018 6:27:06 PM MSK> <Warning> <oracle.adf.share.http.ServletADFContext> <BEA-000000> <Found oracle.adf.share.DefaultContext sticking to oldContext, while the current application is em> 
+<May 16, 2018 6:27:06 PM MSK> <Warning> <org.apache.myfaces.trinidadinternal.config.GlobalConfiguratorImpl> <BEA-000000> <Configurator services already initialized.> 
+<May 16, 2018 6:27:18 PM MSK> <Error> <oracle.adf.share.ADFContext> <BEA-000000> <ADF detected an ADFContext leak.
+Please see the documentation for more information about handling ADFContext leaks.
+For more information about the leaking ADFContext please enable logging for oracle.adf.share.ADFContext at FINEST level.
+> 
+<May 16, 2018 6:27:18 PM MSK> <Notice> <LoggingService> <BEA-320400> <The log file D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\test_domain.log will be rotated. Reopen the log file if tailing has stopped. This can happen on some platforms like Windows.> 
+<May 16, 2018 6:27:18 PM MSK> <Notice> <LoggingService> <BEA-320401> <The log file has been rotated to D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\test_domain.log00008. Log messages will continue to be logged in D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\test_domain.log.> 
+<May 16, 2018 6:27:18 PM MSK> <Notice> <Log Management> <BEA-170027> <The Server has established connection with the Domain level Diagnostic Service successfully.> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to ADMIN> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to RESUMING> 
+<May 16, 2018 6:27:19 PM MSK> <Error> <Server> <BEA-002606> <Unable to create a server socket for listening on channel "Default[2]". The address fe80:0:0:0:8c6a:4d23:a173:5b72 might be incorrect or another process is using port 7001: java.net.BindException: Cannot assign requested address: JVM_Bind.> 
+<May 16, 2018 6:27:19 PM MSK> <Warning> <Server> <BEA-002611> <Hostname "rav-mobile", maps to multiple IP addresses: 192.168.87.1, 172.18.2.71, fe80:0:0:0:71ca:c971:779f:3e3c%16> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <Server> <BEA-002613> <Channel "Default[1]" is now listening on 172.18.2.71:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <Server> <BEA-002613> <Channel "Default[5]" is now listening on fe80:0:0:0:1464:c686:9957:facf:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <Server> <BEA-002613> <Channel "Default[4]" is now listening on fe80:0:0:0:71ca:c971:779f:3e3c:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <Server> <BEA-002613> <Channel "Default[3]" is now listening on fe80:0:0:0:0:100:7f:fffe:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <Server> <BEA-002613> <Channel "Default[8]" is now listening on 127.0.0.1:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <Server> <BEA-002613> <Channel "Default[7]" is now listening on 0:0:0:0:0:0:0:1:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <Server> <BEA-002613> <Channel "Default" is now listening on 192.168.87.1:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <Server> <BEA-002613> <Channel "Default[6]" is now listening on fe80:0:0:0:d5f3:d8a:743c:97cd:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <WebLogicServer> <BEA-000331> <Started WebLogic Admin Server "AdminServer" for domain "test_domain" running in Development Mode> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to RUNNING> 
+<May 16, 2018 6:27:19 PM MSK> <Notice> <WebLogicServer> <BEA-000360> <Server started in RUNNING mode> 
+<May 16, 2018 6:27:22 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element application in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\em.ear/META-INF/application.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 16, 2018 6:28:31 PM MSK> <Error> <org.apache.beehive.netui.pageflow.internal.AdapterManager> <BEA-000000> <ServletContainerAdapter manager not initialized correctly.> 
+<May 16, 2018 6:28:52 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WLSServerControlTablePage.> 
+<May 16, 2018 6:52:36 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 16, 2018 6:53:13 PM MSK> <Error> <J2EE> <BEA-160197> <Unable to load descriptor D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml of module NoCacheFilter.war. The error is weblogic.descriptor.DescriptorException: VALIDATION PROBLEMS WERE FOUND
+  problem: cvc-enumeration-valid: string value '' is not a valid enumeration value for web-app-versionType in namespace http://java.sun.com/xml/ns/javaee:<null>
+	at weblogic.descriptor.internal.MarshallerFactory$1.evaluateResults(MarshallerFactory.java:245)
+	at weblogic.descriptor.internal.MarshallerFactory$1.evaluateResults(MarshallerFactory.java:231)
+	at weblogic.descriptor.internal.MarshallerFactory$1.createDescriptor(MarshallerFactory.java:155)
+	at weblogic.descriptor.BasicDescriptorManager.createDescriptor(BasicDescriptorManager.java:323)
+	at weblogic.application.descriptor.AbstractDescriptorLoader2.getDescriptorBeanFromReader(AbstractDescriptorLoader2.java:788)
+	at weblogic.application.descriptor.AbstractDescriptorLoader2.createDescriptorBean(AbstractDescriptorLoader2.java:409)
+	at weblogic.application.descriptor.AbstractDescriptorLoader2.loadDescriptorBeanWithoutPlan(AbstractDescriptorLoader2.java:759)
+	at weblogic.application.descriptor.AbstractDescriptorLoader2.loadDescriptorBean(AbstractDescriptorLoader2.java:768)
+	at weblogic.servlet.internal.WebAppDescriptor.getWebAppBean(WebAppDescriptor.java:141)
+	at weblogic.servlet.utils.WarUtils.getWebAppBean(WarUtils.java:124)
+	at weblogic.application.compiler.WARModule.processLibraries(WARModule.java:413)
+	at weblogic.application.compiler.WARModule.merge(WARModule.java:455)
+	at weblogic.application.compiler.flow.SingleModuleMergeFlow.proecessModule(SingleModuleMergeFlow.java:16)
+	at weblogic.application.compiler.flow.SingleModuleFlow.compile(SingleModuleFlow.java:36)
+	at weblogic.application.compiler.FlowDriver$FlowStateChange.next(FlowDriver.java:69)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.compiler.FlowDriver.nextState(FlowDriver.java:36)
+	at weblogic.application.compiler.FlowDriver$CompilerFlowDriver.compile(FlowDriver.java:96)
+	at weblogic.application.compiler.ReadOnlyWarMerger.merge(ReadOnlyWarMerger.java:27)
+	at weblogic.application.compiler.flow.AppMergerFlow.mergeInput(AppMergerFlow.java:88)
+	at weblogic.application.compiler.flow.AppMergerFlow.compile(AppMergerFlow.java:41)
+	at weblogic.application.compiler.FlowDriver$FlowStateChange.next(FlowDriver.java:69)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.compiler.FlowDriver.nextState(FlowDriver.java:36)
+	at weblogic.application.compiler.FlowDriver$CompilerFlowDriver.compile(FlowDriver.java:96)
+	at weblogic.application.compiler.AppMerge.runBody(AppMerge.java:157)
+	at weblogic.utils.compiler.Tool.run(Tool.java:158)
+	at weblogic.utils.compiler.Tool.run(Tool.java:115)
+	at weblogic.application.compiler.AppMerge.merge(AppMerge.java:169)
+	at weblogic.deploy.api.internal.utils.AppMerger.merge(AppMerger.java:88)
+	at weblogic.deploy.api.internal.utils.AppMerger.getMergedApp(AppMerger.java:63)
+	at weblogic.deploy.api.model.internal.WebLogicDeployableObjectFactoryImpl.createDeployableObject(WebLogicDeployableObjectFactoryImpl.java:181)
+	at weblogic.deploy.api.model.internal.WebLogicDeployableObjectFactoryImpl.createLazyDeployableObject(WebLogicDeployableObjectFactoryImpl.java:156)
+	at weblogic.deploy.api.tools.SessionHelper.inspect(SessionHelper.java:661)
+	at com.bea.console.actions.app.install.Flow$2.execute(Flow.java:469)
+	at com.bea.console.utils.DeploymentUtils.runDeploymentAction(DeploymentUtils.java:5023)
+	at com.bea.console.actions.app.install.Flow.appSelected(Flow.java:467)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.beehive.netui.pageflow.FlowController.invokeActionMethod(FlowController.java:870)
+	at org.apache.beehive.netui.pageflow.FlowController.getActionMethodForward(FlowController.java:809)
+	at org.apache.beehive.netui.pageflow.FlowController.internalExecute(FlowController.java:478)
+	at org.apache.beehive.netui.pageflow.PageFlowController.internalExecute(PageFlowController.java:306)
+	at org.apache.beehive.netui.pageflow.FlowController.execute(FlowController.java:336)
+	at org.apache.beehive.netui.pageflow.internal.FlowControllerAction.execute(FlowControllerAction.java:52)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.beehive.netui.pageflow.PageFlowRequestProcessor.access$201(PageFlowRequestProcessor.java:97)
+	at org.apache.beehive.netui.pageflow.PageFlowRequestProcessor$ActionRunner.execute(PageFlowRequestProcessor.java:2044)
+	at org.apache.beehive.netui.pageflow.interceptor.action.internal.ActionInterceptors$WrapActionInterceptorChain.continueChain(ActionInterceptors.java:64)
+	at org.apache.beehive.netui.pageflow.interceptor.action.ActionInterceptor.wrapAction(ActionInterceptor.java:184)
+	at org.apache.beehive.netui.pageflow.interceptor.action.internal.ActionInterceptors$WrapActionInterceptorChain.invoke(ActionInterceptors.java:50)
+	at org.apache.beehive.netui.pageflow.interceptor.action.internal.ActionInterceptors$WrapActionInterceptorChain.continueChain(ActionInterceptors.java:58)
+	at org.apache.beehive.netui.pageflow.interceptor.action.internal.ActionInterceptors.wrapAction(ActionInterceptors.java:87)
+	at org.apache.beehive.netui.pageflow.PageFlowRequestProcessor.processActionPerform(PageFlowRequestProcessor.java:2116)
+	at com.bea.console.internal.ConsolePageFlowRequestProcessor.processActionPerform(ConsolePageFlowRequestProcessor.java:261)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.beehive.netui.pageflow.PageFlowRequestProcessor.processInternal(PageFlowRequestProcessor.java:556)
+	at org.apache.beehive.netui.pageflow.PageFlowRequestProcessor.process(PageFlowRequestProcessor.java:853)
+	at org.apache.beehive.netui.pageflow.AutoRegisterActionServlet.process(AutoRegisterActionServlet.java:631)
+	at org.apache.beehive.netui.pageflow.PageFlowActionServlet.process(PageFlowActionServlet.java:158)
+	at com.bea.console.internal.ConsoleActionServlet.process(ConsoleActionServlet.java:262)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at com.bea.console.internal.ConsoleActionServlet.doGet(ConsoleActionServlet.java:134)
+	at org.apache.beehive.netui.pageflow.PageFlowUtils.strutsLookup(PageFlowUtils.java:1199)
+	at com.bea.portlet.adapter.scopedcontent.ScopedContentCommonSupport.executeAction(ScopedContentCommonSupport.java:686)
+	at com.bea.portlet.adapter.scopedcontent.ScopedContentCommonSupport.processActionInternal(ScopedContentCommonSupport.java:142)
+	at com.bea.portlet.adapter.scopedcontent.PageFlowStubImpl.processAction(PageFlowStubImpl.java:106)
+	at com.bea.portlet.adapter.NetuiActionHandler.raiseScopedAction(NetuiActionHandler.java:111)
+	at com.bea.netuix.servlets.controls.content.NetuiContent.raiseScopedAction(NetuiContent.java:181)
+	at com.bea.netuix.servlets.controls.content.NetuiContent.raiseScopedAction(NetuiContent.java:167)
+	at com.bea.netuix.servlets.controls.content.NetuiContent.handlePostbackData(NetuiContent.java:225)
+	at com.bea.netuix.nf.ControlLifecycle$2.visit(ControlLifecycle.java:180)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:324)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walkRecursive(ControlTreeWalker.java:334)
+	at com.bea.netuix.nf.ControlTreeWalker.walk(ControlTreeWalker.java:130)
+	at com.bea.netuix.nf.Lifecycle.processLifecycles(Lifecycle.java:395)
+	at com.bea.netuix.nf.Lifecycle.processLifecycles(Lifecycle.java:361)
+	at com.bea.netuix.nf.Lifecycle.processLifecycles(Lifecycle.java:352)
+	at com.bea.netuix.nf.Lifecycle.runInbound(Lifecycle.java:184)
+	at com.bea.netuix.nf.Lifecycle.run(Lifecycle.java:159)
+	at com.bea.netuix.servlets.manager.UIServlet.runLifecycle(UIServlet.java:388)
+	at com.bea.netuix.servlets.manager.UIServlet.doPost(UIServlet.java:258)
+	at com.bea.netuix.servlets.manager.UIServlet.service(UIServlet.java:199)
+	at com.bea.netuix.servlets.manager.SingleFileServlet.service(SingleFileServlet.java:251)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+	at com.bea.console.utils.MBeanUtilsInitSingleFileServlet.service(MBeanUtilsInitSingleFileServlet.java:64)
+	at weblogic.servlet.AsyncInitServlet.service(AsyncInitServlet.java:130)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:227)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:125)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:301)
+	at weblogic.servlet.internal.TailFilter.doFilter(TailFilter.java:26)
+	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+	at weblogic.servlet.internal.RequestEventsFilter.doFilter(RequestEventsFilter.java:27)
+	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3730)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3696)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2273)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2179)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1490)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:256)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:221)
+.> 
+<May 16, 2018 6:54:16 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 16, 2018 6:54:40 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3DNoCacheFilter%2CType%3DAppDeployment%22%29.> 
+<May 16, 2018 6:54:41 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 16, 2018 7:00:41 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 16, 2018 7:01:02 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 16, 2018 7:07:38 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 16, 2018 7:36:16 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:57,699 during the configured idle timeout of 5 secs> 
+<May 16, 2018 7:36:22 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 16, 2018 7:36:24 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3Dproxyapp%2CType%3DAppDeployment%22%29.> 
+<May 16, 2018 7:38:42 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 16, 2018 7:39:37 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 16, 2018 7:42:34 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 16, 2018 7:43:09 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 16, 2018 7:43:11 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:57,822 during the configured idle timeout of 5 secs> 
+<May 16, 2018 7:43:11 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:57,823 during the configured idle timeout of 5 secs> 
+<May 17, 2018 12:24:28 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 12:24:56 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 12:25:35 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3DNoCacheFilter%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 12:25:35 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 12:26:12 PM MSK> <Error> <JMX> <BEA-149500> <An exception occurred while registering the MBean null.
+java.lang.IllegalArgumentException: Registered more than one instance with the same objectName : com.bea:Name=NoCacheFilter,Type=Application new:weblogic.management.configuration.ApplicationMBeanImpl@21894f29([test_domain]/Applications[NoCacheFilter]) existing weblogic.management.configuration.ApplicationMBeanImpl@21894f29([test_domain]/Applications[NoCacheFilter])
+	at weblogic.management.jmx.ObjectNameManagerBase.registerObject(ObjectNameManagerBase.java:168)
+	at weblogic.management.mbeanservers.internal.WLSObjectNameManager.lookupObjectName(WLSObjectNameManager.java:131)
+	at weblogic.management.jmx.modelmbean.WLSModelMBeanFactory.registerWLSModelMBean(WLSModelMBeanFactory.java:87)
+	at weblogic.management.jmx.modelmbean.WLSModelMBeanContext.lookupOrRegister(WLSModelMBeanContext.java:321)
+	at weblogic.management.jmx.modelmbean.WLSModelMBeanContext.mapToJMX(WLSModelMBeanContext.java:300)
+	Truncated. see log file for complete stacktrace
+> 
+<May 17, 2018 12:27:41 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 12:27:46 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:61,189 during the configured idle timeout of 5 secs> 
+<May 17, 2018 12:27:46 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:61,188 during the configured idle timeout of 5 secs> 
+<May 17, 2018 12:28:04 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 12:34:01 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 12:34:07 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 12:34:36 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:61,304 during the configured idle timeout of 5 secs> 
+<May 17, 2018 12:34:36 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:61,303 during the configured idle timeout of 5 secs> 
+<May 17, 2018 12:34:59 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3Dproxyapp%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 12:35:11 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:61,318 during the configured idle timeout of 5 secs> 
+<May 17, 2018 12:35:11 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:61,319 during the configured idle timeout of 5 secs> 
+<May 17, 2018 1:06:22 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 1:07:40 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 1:08:03 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3DNoCacheFilter%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 1:08:04 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 1:15:00 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 1:15:23 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 1:26:03 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 1:26:47 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 1:27:54 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3Dproxyapp%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 1:28:01 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3Dproxyapp%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 1:33:29 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 1:34:20 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 1:34:56 PM MSK> <Notice> <LoggingService> <BEA-320400> <The log file D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\AdminServer.log will be rotated. Reopen the log file if tailing has stopped. This can happen on some platforms like Windows.> 
+<May 17, 2018 1:34:56 PM MSK> <Notice> <LoggingService> <BEA-320401> <The log file has been rotated to D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\AdminServer.log00010. Log messages will continue to be logged in D:\oracle\wls\config\1036\user_projects\domains\test_domain\servers\AdminServer\logs\AdminServer.log.> 
+<May 17, 2018 1:44:53 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 1:45:09 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 1:51:52 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 1:52:28 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 1:52:53 PM MSK> <Warning> <Deployer> <BEA-149004> <Failures were detected while initiating deploy task for application 'NoCacheFilter'.> 
+<May 17, 2018 1:52:53 PM MSK> <Warning> <Deployer> <BEA-149078> <Stack trace for message 149004
+weblogic.application.ModuleException: The url-pattern, '/*.*' is not valid
+	at weblogic.servlet.internal.WebAppModule.prepare(WebAppModule.java:395)
+	at weblogic.application.internal.flow.ScopedModuleDriver.prepare(ScopedModuleDriver.java:176)
+	at weblogic.application.internal.flow.ModuleListenerInvoker.prepare(ModuleListenerInvoker.java:199)
+	at weblogic.application.internal.flow.DeploymentCallbackFlow$1.next(DeploymentCallbackFlow.java:517)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	Truncated. see log file for complete stacktrace
+Caused By: weblogic.management.DeploymentException: The url-pattern, '/*.*' is not valid
+	at weblogic.servlet.internal.FilterManager.registerFilterMapping(FilterManager.java:192)
+	at weblogic.servlet.internal.FilterManager.registerServletFilters(FilterManager.java:219)
+	at weblogic.servlet.internal.WebAppServletContext.prepareFromDescriptors(WebAppServletContext.java:1258)
+	at weblogic.servlet.internal.WebAppServletContext.prepare(WebAppServletContext.java:1193)
+	at weblogic.servlet.internal.HttpServer.doPostContextInit(HttpServer.java:453)
+	Truncated. see log file for complete stacktrace
+> 
+<May 17, 2018 1:52:53 PM MSK> <Error> <Console> <BEA-240003> <Console encountered the following error weblogic.application.ModuleException: The url-pattern, '/*.*' is not valid
+	at weblogic.servlet.internal.WebAppModule.prepare(WebAppModule.java:395)
+	at weblogic.application.internal.flow.ScopedModuleDriver.prepare(ScopedModuleDriver.java:176)
+	at weblogic.application.internal.flow.ModuleListenerInvoker.prepare(ModuleListenerInvoker.java:199)
+	at weblogic.application.internal.flow.DeploymentCallbackFlow$1.next(DeploymentCallbackFlow.java:517)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.internal.flow.DeploymentCallbackFlow.prepare(DeploymentCallbackFlow.java:159)
+	at weblogic.application.internal.flow.DeploymentCallbackFlow.prepare(DeploymentCallbackFlow.java:45)
+	at weblogic.application.internal.BaseDeployment$1.next(BaseDeployment.java:648)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.internal.BaseDeployment.prepare(BaseDeployment.java:191)
+	at weblogic.application.internal.SingleModuleDeployment.prepare(SingleModuleDeployment.java:44)
+	at weblogic.application.internal.DeploymentStateChecker.prepare(DeploymentStateChecker.java:154)
+	at weblogic.deploy.internal.targetserver.AppContainerInvoker.prepare(AppContainerInvoker.java:60)
+	at weblogic.deploy.internal.targetserver.operations.ActivateOperation.createAndPrepareContainer(ActivateOperation.java:208)
+	at weblogic.deploy.internal.targetserver.operations.ActivateOperation.doPrepare(ActivateOperation.java:98)
+	at weblogic.deploy.internal.targetserver.operations.AbstractOperation.prepare(AbstractOperation.java:217)
+	at weblogic.deploy.internal.targetserver.DeploymentManager.handleDeploymentPrepare(DeploymentManager.java:747)
+	at weblogic.deploy.internal.targetserver.DeploymentManager.prepareDeploymentList(DeploymentManager.java:1216)
+	at weblogic.deploy.internal.targetserver.DeploymentManager.handlePrepare(DeploymentManager.java:250)
+	at weblogic.deploy.internal.targetserver.DeploymentServiceDispatcher.prepare(DeploymentServiceDispatcher.java:159)
+	at weblogic.deploy.service.internal.targetserver.DeploymentReceiverCallbackDeliverer.doPrepareCallback(DeploymentReceiverCallbackDeliverer.java:171)
+	at weblogic.deploy.service.internal.targetserver.DeploymentReceiverCallbackDeliverer.access$000(DeploymentReceiverCallbackDeliverer.java:13)
+	at weblogic.deploy.service.internal.targetserver.DeploymentReceiverCallbackDeliverer$1.run(DeploymentReceiverCallbackDeliverer.java:46)
+	at weblogic.work.SelfTuningWorkManagerImpl$WorkAdapterImpl.run(SelfTuningWorkManagerImpl.java:545)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:256)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:221)
+Caused by: weblogic.management.DeploymentException: The url-pattern, '/*.*' is not valid
+	at weblogic.servlet.internal.FilterManager.registerFilterMapping(FilterManager.java:192)
+	at weblogic.servlet.internal.FilterManager.registerServletFilters(FilterManager.java:219)
+	at weblogic.servlet.internal.WebAppServletContext.prepareFromDescriptors(WebAppServletContext.java:1258)
+	at weblogic.servlet.internal.WebAppServletContext.prepare(WebAppServletContext.java:1193)
+	at weblogic.servlet.internal.HttpServer.doPostContextInit(HttpServer.java:453)
+	at weblogic.servlet.internal.HttpServer.loadWebApp(HttpServer.java:428)
+	at weblogic.servlet.internal.WebAppModule.registerWebApp(WebAppModule.java:976)
+	at weblogic.servlet.internal.WebAppModule.prepare(WebAppModule.java:384)
+> 
+<May 17, 2018 1:54:12 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 1:55:48 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3Dproxyapp%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 1:56:03 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3DNoCacheFilter%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 1:56:03 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 1:56:10 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 1:56:11 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:65,518 during the configured idle timeout of 5 secs> 
+<May 17, 2018 2:01:30 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 2:02:23 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\Proxy-vs-NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 2:05:35 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 2:05:44 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\Proxy-vs-NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 2:20:21 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=AppDeploymentsControlPage.> 
+<May 17, 2018 2:20:47 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\Proxy-vs-NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 2:23:34 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\Proxy-vs-NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 2:30:54 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3DProxy-vs-NoCacheFilter%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 2:30:55 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\Proxy-vs-NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 2:31:02 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\Proxy-vs-NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 2:31:25 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3Dproxyapp%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 2:32:31 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 2:32:36 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:2,885 during the configured idle timeout of 5 secs> 
+<May 17, 2018 2:32:36 PM MSK> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 0:0:0:0:0:0:0:1:2,884 during the configured idle timeout of 5 secs> 
+<May 17, 2018 2:36:14 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3DNoCacheFilter%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 2:36:14 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 2:36:19 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 2:36:23 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3Dproxyapp%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 2:36:37 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3DProxy-vs-NoCacheFilter%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 2:36:37 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\Proxy-vs-NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 2:36:42 PM MSK> <Warning> <Munger> <BEA-2156203> <A version attribute was not found in element web-app in the deployment descriptor in D:\oracle\wls\config\1036\applications\test_domain\Proxy-vs-NoCacheFilter.war/WEB-INF/web.xml. A version attribute is required, but this version of the Weblogic Server will assume that the JEE5 is used. Future versions of the Weblogic Server will reject descriptors that do not specify the JEE version.> 
+<May 17, 2018 2:46:10 PM MSK> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=WebAppApplicationOverviewPage&WebAppApplicationOverviewPortlethandle=com.bea.console.handles.AppDeploymentHandle%28%22com.bea%3AName%3DProxy-vs-NoCacheFilter%2CType%3DAppDeployment%22%29.> 
+<May 17, 2018 3:26:13 PM MSK> <Error> <JMX> <BEA-149500> <An exception occurred while registering the MBean null.
+java.lang.IllegalArgumentException: Registered more than one instance with the same objectName : com.bea:Name=NoCacheFilter,Type=Application new:weblogic.management.configuration.ApplicationMBeanImpl@21894f29([test_domain]/Applications[NoCacheFilter]) existing weblogic.management.configuration.ApplicationMBeanImpl@21894f29([test_domain]/Applications[NoCacheFilter])
+	at weblogic.management.jmx.ObjectNameManagerBase.registerObject(ObjectNameManagerBase.java:168)
+	at weblogic.management.mbeanservers.internal.WLSObjectNameManager.lookupObjectName(WLSObjectNameManager.java:131)
+	at weblogic.management.jmx.modelmbean.WLSModelMBeanFactory.registerWLSModelMBean(WLSModelMBeanFactory.java:87)
+	at weblogic.management.jmx.modelmbean.WLSModelMBeanContext.lookupOrRegister(WLSModelMBeanContext.java:321)
+	at weblogic.management.jmx.modelmbean.WLSModelMBeanContext.mapToJMX(WLSModelMBeanContext.java:300)
+	Truncated. see log file for complete stacktrace
+> 

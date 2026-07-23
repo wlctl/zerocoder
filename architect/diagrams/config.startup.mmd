@@ -1,0 +1,29 @@
+sequenceDiagram
+    participant Op as Оператор
+    participant Main as cmd/devagent
+    participant Cfg as internal/config
+    participant DB as internal/db
+    participant Migr as migrations
+    participant Srv as internal/server
+    Op->>Main: start (sh/start-la.sh)
+    Main->>Cfg: Load(LA_CONF или ./la.conf)
+    alt la.conf отсутствует
+        Cfg->>Cfg: EnsureFromTemplate (embed la.conf.template)
+        Cfg-->>Main: Config (дефолты)
+    else la.conf есть
+        Cfg-->>Main: Config (значения + дефолты пустых)
+    end
+    Main->>DB: Open(SOURCE_DB_URL)
+    alt scheme sqlite
+        DB->>DB: открыть/создать SQLite-файл + pragmas
+    end
+    DB-->>Main: *sql.DB
+    Main->>Migr: Run(db)
+    Migr->>DB: CREATE TABLE IF NOT EXISTS schema_migrations
+    Migr->>DB: применить миграции 0001 (la_meta) если нет
+    Migr-->>Main: ok
+    Main->>Srv: ListenAndServe(LISTEN_ADDRESS:LISTEN_PORT, /healthz)
+    Srv-->>Op: GET /healthz -> {"status":"ok"}
+    Op->>Main: SIGINT/SIGTERM
+    Main->>Srv: Shutdown
+    Main->>DB: Close

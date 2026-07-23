@@ -1,0 +1,72 @@
+{
+  "id": "US-0002",
+  "title": "Загрузка и ингестия лог-файлов разнородных форматов",
+  "status": "ready",
+  "priority": "must",
+  "domain": "ingestion",
+  "project": ["backend", "frontend"],
+  "target": ["go", "angular"],
+  "spec_ref": "architect/specs/ingestion.spec.md",
+  "created": "2026-07-23",
+  "updated": "2026-07-23",
+  "asRole": "инженер тех.поддержки/аналитик",
+  "wantGoal": "загрузить один или несколько лог-файлов (или zip-архив) через веб-интерфейс и автоматически разобрать их в таблицы для анализа",
+  "soValue": "не возиться с сырыми логами повторно и быстро перейти к поиску/визуализации",
+  "context": "Продолжение backend-потока после US-0001. Источник — SQLite (MVP). Только текстовые логи. Разнородные: Oracle alert.log, Postgres, Java multiline (weblogic/tomcat/glassfish), Linux. Загрузка через Angular. Конфиг: MAX_FILE_SIZE=10GB, MAX_FILE_COUNT=10, LA_DEFAULT_TZ=UTC. Python-релиз полного функционала — по запросу.",
+  "decisions_schema_storage": {
+    "storage": "без BLOB, без отдельного ФС; распарсенные записи (длинный TEXT) — хранилище",
+    "record_model": "логическая запись = одна строка таблицы; multiline stack-trace блок склеивается в одну строку (raw_line TEXT с переносами); ts/level из головной строки",
+    "datetime": "ts (UTC ISO8601 sortable), ts_raw (оригинал), tz_offset, tz_inferred (0/1); не разобрана -> ts=NULL, ts_raw сохранён",
+    "severity": "level — нормализованное (error/warning/info/...)",
+    "tables": {
+      "t_files_upload": "id, filename, md5 UNIQUE, size_bytes, kind(zip|file), status, uploaded_at, error",
+      "t_files_analyze": "id, upload_id (1→N), filename, path_in_archive, md5, format, status, record_count, parsed_at, error",
+      "t_log_entries": "id, file_analyze_id, seq, format, ts, ts_raw, tz_offset, tz_inferred, level, component, message, raw_line TEXT, attrs JSON; INDEX(file_analyze_id,seq),(ts),(level)"
+    },
+    "zip": "считается за 1 в MAX_FILE_COUNT; размер входящего ≤ MAX_FILE_SIZE; распаковка рекурсивна по подкаталогам (только лог-файлы); архив не хранится; каждому файлу новый ID",
+    "dedup": "по MD5 входящего файла (t_files_upload.md5); повтор -> 'Файл уже был загружен ранее'",
+    "format_detection": "авто по имени/содержимому; не определился -> text (построчно + попытка даты/уровня); форматы oracle/postgres/java/linux/text; конфиг-файлы тоже просматриваемы",
+    "timezone_default": "LA_DEFAULT_TZ (UTC, изменяемый) для логов без смещения; tz_inferred=1"
+  },
+  "acceptanceCriteria": [
+    { "id": "AC-1", "criterion": "Веб-интерфейс: загрузка одного/нескольких лог-файлов либо одного zip-архива", "verified": false },
+    { "id": "AC-2", "criterion": "Лимиты из конфига: MAX_FILE_SIZE=10GB (входящий), MAX_FILE_COUNT=10 (zip=1); превышение -> понятная ошибка", "verified": false },
+    { "id": "AC-3", "criterion": "zip распаковывается рекурсивно по подкаталогам; каждому файлу новый ID; путь в архиве сохраняется; архив не хранится", "verified": false },
+    { "id": "AC-4", "criterion": "Форматы oracle/postgres/java/linux + fallback text; автоопределение", "verified": false },
+    { "id": "AC-5", "criterion": "Повторная загрузка входящего с тем же MD5 блокируется: 'Файл уже был загружен ранее'", "verified": false },
+    { "id": "AC-6", "criterion": "Список ранее загруженных, повторный анализ, удаление (каскадно с записями)", "verified": false },
+    { "id": "AC-7", "criterion": "Файлы -> t_log_entries: одна логическая запись (multiline блок целиком) = одна строка; raw_line TEXT (без BLOB)", "verified": false },
+    { "id": "AC-8", "criterion": "Извлекаются datetime (форматы/таймзоны; без смещения -> LA_DEFAULT_TZ) и критичность; ts/ts_raw/tz_offset/tz_inferred/level", "verified": false },
+    { "id": "AC-9", "criterion": "la.conf/la.conf.template дополнены MAX_FILE_SIZE, MAX_FILE_COUNT, LA_DEFAULT_TZ (10GB/10/UTC)", "verified": false },
+    { "id": "AC-10", "criterion": "Backend: go build/vet/gofmt/test -race/cover; frontend: ng build/ng test", "verified": false },
+    { "id": "AC-11", "criterion": "После парсинга каждый файл получает сводку: число записей, дата загрузки, размер, кодировка, first/last ts, длительность", "verified": false },
+    { "id": "AC-12", "criterion": "Форматные постобработчики выделяют: число сессий старт-стоп, длительности интервалов старт-стоп, число сообщений в категориях (error/warning/critical/...)", "verified": false },
+    { "id": "AC-13", "criterion": "Постобработчики — плагины (Go .so / Python .py) в postprocessors/ (env LA_POSTPROCESSORS_DIR); добавление/модификация: только модуль + рестарт, без пересборки бинарника и без повторного развёртывания; нет плагина для формата -> built-in базовый", "verified": false }
+  ],
+  "nonFunctionalRequirements": [
+    "MD5 и парсинг потоковые (без загрузки всего файла в память)",
+    "Потоковая загрузка без полного буферирования в RAM",
+    "zip распаковывается потоком; защита от zip-бомб лимитом MAX_FILE_SIZE входящего",
+    "Нормализация дат per формат + ISO8601/common; unknown -> ts=NULL",
+    "Секреты не в репозитории; конфиг-поля в la.conf/la.conf.template",
+    "Python-релиз полного функционала — по запросу",
+    "Плагинная архитектура парсеров: тип лога -> парсер; каждый парсер — отдельный модуль (Go .so buildmode=plugin / Python .py) в подкаталоге parsers/ (env LA_PARSERS_DIR). Добавление/модификация парсера: собирается/кладётся только модуль в parsers/, затем рестарт процесса (допустим) — подхватывается при старте сканированием parsers/; БЕЗ пересборки основного бинарника и БЕЗ повторного развёртывания всего продукта. Общий стабильный интерфейс в отдельном пакете (Go internal/parser, Python parsers/base.py)",
+    "Ограничения Go-плагинов: только Linux; один тулчейн + одинаковые версии общих зависимостей (парсеры в том же модуле); выгрузка .so в работающем процессе невозможна — смена/добавление парсера через рестарт (допустим по NFR), без пересборки основного бинарника и повторного развёртывания продукта",
+    "Многоформатный/мультилокальный разбор дат: datetime определяется и разбирается в разных форматах и локалях (ISO8601+offset, dd/Mon/YYYY:HH:MM:SS +offset, YYYY-MM-DD HH:MM:SS,mmm, Mon DD YYYY h:mm AM/PM TZ, Wed Mar 28 ... 2012); единый каталог layout-ов + локализованные имена месяцев (Jan..Dec, расширяемо); TZ-аббревиатуры неоднозначны -> LA_DEFAULT_TZ (tz_inferred=1); ни один layout не подошёл -> ts=NULL, ts_raw сохраняется; общий модуль Go internal/parser/datetime.go, Python parsers/datetime.py",
+    "Этап постобработки: после загрузки+парсинга каждый файл получает сводку; к каждому типу файла — свой постобработчик (параллельно парсерам): базовый показывает число строк, дату загрузки, размер, кодировку и т.п.; остальные наследуют от базового и расширяют (минимум: число сессий старт-стоп, длительности интервалов старт-стоп, число сообщений в категориях error/warning/critical/etc); плагины (Go .so buildmode=plugin / Python .py) в postprocessors/ (env LA_POSTPROCESSORS_DIR); добавление/модификация: только модуль + рестарт (допустим), БЕЗ пересборки основного бинарника и БЕЗ повторного развёртывания продукта; нет плагина для формата -> built-in базовый; интерфейс в отдельном пакете (Go internal/postprocess, Python postprocessors/base.py); сводка в t_files_analyze (encoding/first_ts/last_ts/duration_sec + summary JSON), доступ через GET /api/files/{id} и POST /api/files/{id}/postprocess; ограничения Go-плагинов те же, что у парсеров"
+  ],
+  "dependencies": ["US-0001"],
+  "openQuestions": [
+    "Точные паттерны разбора per формат (нужны примеры строк Oracle/Postgres/Java/Linux) — в спецификации",
+    "Состав REST API эндпоинтов (upload, list, get entries, delete, parse-status) — в спецификации",
+    "Нормализованный словарь критичности (SEVERE→error, WARN→warning, ...) — в спецификации",
+    "Правила старт/стоп сессий per формат — в спецификации (postprocessors.rules_by_format)"
+  ],
+  "trace": {
+    "spec": "architect/specs/ingestion.spec.md",
+    "code": ["release/backend/go/internal/ingest/*", "release/backend/go/internal/parser/*", "release/backend/go/internal/postprocess/*", "release/backend/go/internal/server/handlers_ingest.go", "release/backend/go/internal/db/migrations.go"],
+    "tests": ["release/backend/go/internal/ingest/ingest_test.go", "release/backend/go/internal/parser/parser_test.go", "release/backend/go/internal/postprocess/postprocess_test.go", "release/backend/go/internal/server/api_test.go", "release/backend/go/internal/db/migrations_test.go"],
+    "changelog": "changelog/CHANGELOG.md#0.2.0",
+    "release": "release/backend/go/build/devagent (0.2.0)"
+  }
+}

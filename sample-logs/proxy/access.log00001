@@ -1,0 +1,10 @@
+127.0.0.1 - - [16/May/2018:18:08:04 +0400] "GET /ShoppingCart/ HTTP/1.1" 200 895 
+127.0.0.1 - - [16/May/2018:18:08:05 +0400] "GET /ShoppingCart/pages/images/DWResortFooter1a.jpg HTTP/1.1" 304 0 
+127.0.0.1 - - [16/May/2018:18:08:05 +0400] "GET /ShoppingCart/pages/images/DWResortHeader1a.jpg HTTP/1.1" 304 0 
+127.0.0.1 - - [16/May/2018:18:14:59 +0400] "GET /ShoppingCart HTTP/1.1" 302 265 
+127.0.0.1 - - [16/May/2018:18:15:48 +0400] "GET /ShoppingCart HTTP/1.1" 302 265 
+127.0.0.1 - - [16/May/2018:18:16:28 +0400] "GET /ShoppingCart HTTP/1.1" 302 265 
+127.0.0.1 - - [16/May/2018:18:18:30 +0400] "GET /ShoppingCart HTTP/1.1" 302 265 
+127.0.0.1 - - [16/May/2018:18:18:50 +0400] "GET /ShoppingCart/ HTTP/1.1" 200 895 
+127.0.0.1 - - [16/May/2018:18:18:50 +0400] "GET /ShoppingCart/pages/images/DWResortHeader1a.jpg HTTP/1.1" 304 0 
+127.0.0.1 - - [16/May/2018:18:18:50 +0400] "GET /ShoppingCart/pages/images/DWResortFooter1a.jpg HTTP/1.1" 304 0 

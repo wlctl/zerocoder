@@ -1,0 +1,42 @@
+sequenceDiagram
+    participant UI as Angular UI
+    participant API as backend /api
+    participant Up as upload service
+    participant DB as SQLite
+    participant PM as parser manager (plugins)
+    participant PP as postprocess manager (plugins)
+    UI->>API: POST /api/uploads (file|zip)
+    API->>Up: handle multipart (stream + MD5)
+    Up->>Up: check MAX_FILE_SIZE / MAX_FILE_COUNT (zip=1)
+    Up->>DB: SELECT md5 FROM t_files_upload WHERE md5=?
+    alt md5 уже есть
+        Up-->>UI: 409 "Файл уже был загружен ранее"
+    else новый
+        Up->>DB: INSERT t_files_upload(kind, status=uploaded)
+        alt zip
+            Up->>Up: stream unzip, recurse подкаталоги
+            loop каждый текстовый файл
+                Up->>DB: INSERT t_files_analyze(path_in_archive)
+            end
+        else одиночный файл
+            Up->>DB: INSERT t_files_analyze(1:1)
+        end
+        loop каждый analyze-файл
+            Up->>PM: detect(sample) -> format
+            Up->>PM: parse(stream) -> emit Record
+            PM-->>Up: Record{ts,level,raw_line,...}
+            Up->>DB: batch INSERT t_log_entries
+            Up->>DB: UPDATE t_files_analyze record_count,status=parsed
+            Up->>PP: postprocess(file_analyze_id, entries)
+            PP-->>Up: Summary{encoding,first_ts,last_ts,duration,level_counts,sessions,...}
+            Up->>DB: UPDATE t_files_analyze encoding,first_ts,last_ts,duration_sec,summary,status=pp
+        end
+        Up-->>UI: 200 upload_id + статусы
+    end
+    UI->>API: GET /api/files/{id}/entries?level&from&to&q
+    API->>DB: SELECT ... FROM t_log_entries
+    DB-->>API: rows
+    API-->>UI: JSON entries
+    UI->>API: DELETE /api/uploads/{id}
+    API->>DB: DELETE (CASCADE)
+    DB-->>API: ok

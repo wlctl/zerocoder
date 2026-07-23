@@ -1,0 +1,230 @@
+####<Mar 24, 2016 12:51:30 AM GMT+03:00> <Info> <Security> <iRAV.net> <> <main> <> <> <> <1458769890369> <BEA-090905> <Disabling the CryptoJ JCE Provider self-integrity check for better startup performance. To enable this check, specify -Dweblogic.security.allowCryptoJDefaultJCEVerification=true.> 
+####<Mar 24, 2016 12:51:30 AM GMT+03:00> <Info> <Security> <iRAV.net> <> <main> <> <> <> <1458769890433> <BEA-090906> <Changing the default Random Number Generator in RSA CryptoJ from ECDRBG128 to FIPS186PRNG. To disable this change, specify -Dweblogic.security.allowCryptoJDefaultPRNG=true.> 
+####<Mar 24, 2016 12:51:30 AM GMT+03:00> <Info> <WebLogicServer> <iRAV.net> <> <Thread-5> <> <> <> <1458769890670> <BEA-000377> <Starting WebLogic Server with Java HotSpot(TM) 64-Bit Server VM Version 24.79-b02 from Oracle Corporation.> 
+####<Mar 24, 2016 12:51:30 AM GMT+03:00> <Info> <Management> <iRAV.net> <> <Thread-7> <> <> <> <1458769890996> <BEA-141298> <Could not register with the Administration Server: java.rmi.RemoteException: [Deployer:149147]Could not reach the Administration Server through any of its URLs: "http://192.168.0.223:7001".> 
+####<Mar 24, 2016 12:51:30 AM GMT+03:00> <Info> <Management> <iRAV.net> <> <Thread-7> <> <> <> <1458769890997> <BEA-141107> <Version: WebLogic Server 12.1.3.0.0  Wed May 21 18:53:34 PDT 2014 1604337 > 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Alert> <Management> <iRAV.net> <> <Thread-7> <> <> <> <1458769891697> <BEA-141151> <The Administration Server could not be reached at http://192.168.0.223:7001.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Configuration Management> <iRAV.net> <> <Thread-7> <> <> <> <1458769891700> <BEA-150018> <This server is being started in Managed Server independence mode in the absence of the Administration Server.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Notice> <WebLogicServer> <iRAV.net> <> <Thread-7> <> <> <> <1458769891702> <BEA-000365> <Server state changed to STARTING.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <WorkManager> <iRAV.net> <> <Thread-7> <> <> <> <1458769891707> <BEA-002900> <Initializing self-tuning thread pool.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <WorkManager> <iRAV.net> <> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <> <> <> <1458769891728> <BEA-002942> <CMM memory level becomes 0. Setting standby thread pool size to 256.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <WebLogicServer> <iRAV.net> <> <Thread-7> <> <> <> <1458769891741> <BEA-000214> <WebLogic Server "AdminServer" version:
+WebLogic Server 12.1.3.0.0  Wed May 21 18:53:34 PDT 2014 1604337  Copyright (c) 1995,2014, Oracle and/or its affiliates. All rights reserved.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891765> <BEA-002622> <The protocol "t3" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891765> <BEA-002622> <The protocol "t3s" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891765> <BEA-002622> <The protocol "http" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891765> <BEA-002622> <The protocol "https" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891766> <BEA-002622> <The protocol "iiop" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891766> <BEA-002622> <The protocol "iiops" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891767> <BEA-002622> <The protocol "ldap" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891767> <BEA-002622> <The protocol "ldaps" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891769> <BEA-002622> <The protocol "cluster" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891769> <BEA-002622> <The protocol "clusters" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891771> <BEA-002622> <The protocol "snmp" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891771> <BEA-002622> <The protocol "admin" is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-5> <> <> <> <1458769891771> <BEA-002624> <The administration protocol is "t3s" and is now configured.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <RJVM> <iRAV.net> <> <Thread-7> <> <> <> <1458769891776> <BEA-000570> <Network Configuration for Channel "AdminServer"
+ Listen Address		 192.168.0.223:7001
+ Public Address		 N/A
+ Http Enabled		 true
+ Tunneling Enabled	 false
+ Outbound Enabled	 false
+ Admin Traffic Enabled	 true ResolveDNSName Enabled	 false> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Debug> <RJVM> <iRAV.net> <> <Thread-7> <> <> <> <1458769891776> <BEA-000571> <Network Configuration Detail for Channel "AdminServer"
+ Channel Weight		 50
+ Accept Backlog		 300
+ Login Timeout		 5000ms
+ Max Message Size	 10000000
+ Message Timeout	 60s
+ Idle Timeout		 65s
+ Tunneling Timeout	 40s
+ Tunneling Ping		 45s> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Server> <iRAV.net> <> <Thread-7> <> <> <> <1458769891786> <BEA-002609> <Channel Service initialized.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Notice> <Log Management> <iRAV.net> <> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <> <> <> <1458769891807> <BEA-170019> <The server log file /soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.log is opened. All server side log events will be written to this file.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Log Management> <iRAV.net> <> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <> <> <> <1458769891810> <BEA-170023> <The Server Logging is initialized with Java Logging API implementation.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Diagnostics> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769891840> <BEA-320001> <The ServerDebug service initialized successfully.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <IIOP> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769891841> <BEA-002014> <IIOP subsystem enabled.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Store> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769891874> <BEA-280008> <Opening the persistent file store "WLS_DIAGNOSTICS" for recovery: directory=/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/data/store/diagnostics requestedWritePolicy="Disabled" fileLockingEnabled=true driver="wlfileio3".> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Store> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769891878> <BEA-280103> <The persistent file store "WLS_DIAGNOSTICS" will cache in weblogic.store.io.file.direct.FileMapping[granularity=4096 io=mapped].> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Store> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769891892> <BEA-280009> <The persistent file store "WLS_DIAGNOSTICS" (f3d43435-3913-41f1-b86f-cda9dbf1e35a) has been opened: blockSize=512 actualWritePolicy="Disabled(single-handle-non-direct)" explicitIOEnforced=false records=29.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Management> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769891917> <BEA-141278> <Java entropy configuration is: System property "java.security.egd= null"; JRE's java.security file property "securerandom.source= file:/dev/urandom"; Blocking Config= false; JDK version= 1.7.0_79; Operating System= Linux.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Management> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769891918> <BEA-141280> <Detected NON-BLOCKING java entropy configuration. This setting will provide the best performance on machines with few sources of entropy, but is less secure than a blocking entropy configuration.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Management> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769891918> <BEA-141187> <Java system properties are defined as follows: 
+awt.toolkit = sun.awt.X11.XToolkit
+file.encoding = UTF-8
+file.encoding.pkg = sun.io
+file.separator = /
+java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+java.awt.printerjob = sun.print.PSPrinterJob
+java.class.path = /soft/wls/dev/user_projects/applications/wl_server/examples/build/serverclasses:/soft/wls/dev/user_projects/applications/wl_server/examples/src:/soft/wls/jdk/lib/tools.jar:/soft/wls/1213/wlserver/server/lib/weblogic_sp.jar:/soft/wls/1213/wlserver/server/lib/weblogic.jar:/soft/wls/1213/oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b3/lib/ant-contrib.jar:/soft/wls/1213/wlserver/modules/features/oracle.wls.common.nodemanager_2.0.0.0.jar:/soft/wls/1213/oracle_common/modules/com.oracle.cie.config-wls-online_8.1.0.0.jar::/soft/wls/1213/wlserver/common/derby/lib/derbynet.jar:/soft/wls/1213/wlserver/common/derby/lib/derbyclient.jar:/soft/wls/1213/wlserver/common/derby/lib/derby.jar:/soft/wls/1213/wlserver/server/lib/xqrl.jar:/soft/wls/jdk/lib/tools.jar:/soft/wls/1213/wlserver/server/lib/weblogic_sp.jar:/soft/wls/1213/wlserver/server/lib/weblogic.jar:/soft/wls/1213/oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b3/lib/ant-contrib.jar:/soft/wls/1213/wlserver/modules/features/oracle.wls.common.nodemanager_2.0.0.0.jar::/soft/wls/1213
+java.class.version = 51.0
+java.endorsed.dirs = /soft/wls/jdk/jre/lib/endorsed:/soft/wls/1213/oracle_common/modules/endorsed
+java.ext.dirs = /soft/wls/jdk/jre/lib/ext:/usr/java/packages/lib/ext
+java.home = /soft/wls/jdk/jre
+java.io.tmpdir = /tmp
+java.library.path = ::/soft/wls/1213/wlserver/server/native/linux/x86_64:/soft/wls/1213/wlserver/server/native/linux/x86_64/oci920_8:/soft/wls/1213/wlserver/server/native/linux/x86_64:/soft/wls/1213/wlserver/server/native/linux/x86_64/oci920_8:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+java.naming.factory.initial = weblogic.jndi.WLInitialContextFactory
+java.naming.factory.url.pkgs = weblogic.jndi.factories:weblogic.corba.j2ee.naming.url:weblogic.jndi.factories:weblogic.corba.j2ee.naming.url
+java.runtime.name = Java(TM) SE Runtime Environment
+java.runtime.version = 1.7.0_79-b15
+java.security.policy = /soft/wls/1213/wlserver/server/lib/weblogic.policy
+java.specification.name = Java Platform API Specification
+java.specification.vendor = Oracle Corporation
+java.specification.version = 1.7
+java.vendor = Oracle Corporation
+java.vendor.url = http://java.oracle.com/
+java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+java.version = 1.7.0_79
+java.vm.info = mixed mode
+java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+java.vm.specification.name = Java Virtual Machine Specification
+java.vm.specification.vendor = Oracle Corporation
+java.vm.specification.version = 1.7
+java.vm.vendor = Oracle Corporation
+java.vm.version = 24.79-b02
+javax.management.builder.initial = weblogic.management.jmx.mbeanserver.WLSMBeanServerBuilder
+javax.rmi.CORBA.PortableRemoteObjectClass = weblogic.iiop.PortableRemoteObjectDelegateImpl
+javax.rmi.CORBA.UtilClass = weblogic.iiop.UtilDelegateImpl
+org.omg.CORBA.ORBClass = weblogic.corba.orb.ORB
+org.omg.CORBA.ORBSingletonClass = weblogic.corba.orb.ORB
+os.arch = amd64
+os.name = Linux
+os.version = 3.10.0-327.4.4.el7.x86_64
+path.separator = :
+sun.arch.data.model = 64
+sun.boot.class.path = /soft/wls/1213/oracle_common/modules/endorsed/javax-xml-bind.jar:/soft/wls/1213/oracle_common/modules/endorsed/javax-xml-ws.jar:/soft/wls/1213/oracle_common/modules/endorsed/jsr250-api.jar:/soft/wls/jdk/jre/lib/resources.jar:/soft/wls/jdk/jre/lib/rt.jar:/soft/wls/jdk/jre/lib/sunrsasign.jar:/soft/wls/jdk/jre/lib/jsse.jar:/soft/wls/jdk/jre/lib/jce.jar:/soft/wls/jdk/jre/lib/charsets.jar:/soft/wls/jdk/jre/lib/jfr.jar:/soft/wls/jdk/jre/classes
+sun.boot.library.path = /soft/wls/jdk/jre/lib/amd64
+sun.cpu.endian = little
+sun.io.unicode.encoding = UnicodeLittle
+sun.java.command = weblogic.Server
+sun.java.launcher = SUN_STANDARD
+sun.jnu.encoding = UTF-8
+sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+sun.os.patch.level = unknown
+user.country = US
+user.dir = /soft/wls/dev/user_projects/domains/wl_server
+user.home = /u01/app/oracle/admin
+user.language = en
+user.name = oracle
+user.timezone = Etc/GMT-3
+vde.home = /soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/data/ldap
+weblogic.Name = AdminServer
+weblogic.home = /soft/wls/1213/wlserver/server
+weblogic.management.server = 192.168.0.223:7001
+weblogic.nmservice.RotationEnabled = true
+weblogic.nodemanager.ServiceEnabled = true
+weblogic.system.BootIdentityFile = /soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/security/boot.properties
+weblogic.utils.cmm.lowertier.ServiceDisabled = true
+wls.home = /soft/wls/1213/wlserver/server
+.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Socket> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769891979> <BEA-000436> <Allocating 4 reader threads.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <Socket> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769891979> <BEA-000446> <Native I/O enabled.> 
+####<Mar 24, 2016 12:51:31 AM GMT+03:00> <Info> <XML> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769891984> <BEA-130036> <Initializing XMLRegistry> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <Security> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892309> <BEA-000000> <Starting OpenJPA 1.1.1-SNAPSHOT> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <Security> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892409> <BEA-000000> <StoreServiceImpl.initJDO - StoreService is initialized with Id = ldap_SY0fVugawHBg90whw7xbMbVvIxQ=> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <Security> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892495> <BEA-090516> <The Authorizer provider has preexisting LDAP data.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <Security> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892666> <BEA-090516> <The CredentialMapper provider has preexisting LDAP data.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <Security> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892670> <BEA-090516> <The RoleMapper provider has preexisting LDAP data.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <Security> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892734> <BEA-090093> <No pre-WLS 8.1 Keystore providers are configured for server AdminServer for security realm myrealm.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Notice> <Security> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892734> <BEA-090082> <Security initializing using security realm myrealm.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <messaging.interception> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892799> <BEA-400000> <Initializing message interception service.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <Store> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892805> <BEA-280008> <Opening the persistent file store "_WLS_AdminServer" for recovery: directory=/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/data/store/default requestedWritePolicy="Direct-Write" fileLockingEnabled=true driver="wlfileio3".> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892830> <BEA-040305> <JMS service is initialized and in standby mode.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892851> <BEA-040090> <Deployed 8 default connection factories.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892853> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory2" with its JNDI name "weblogic.jms.XAConnectionFactory2" is started.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892853> <BEA-040407> <Default connection factory "MessageDrivenBeanConnectionFactory" with its JNDI name "weblogic.jms.MessageDrivenBeanConnectionFactory" is started.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892853> <BEA-040407> <Default connection factory "DefaultConnectionFactory" with its JNDI name "weblogic.jms.ConnectionFactory" is started.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892854> <BEA-040407> <Default connection factory "TopicConnectionFactory" with its JNDI name "javax.jms.TopicConnectionFactory" is started.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892854> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory" with its JNDI name "weblogic.jms.XAConnectionFactory" is started.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892854> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory0" with its JNDI name "weblogic.jms.XAConnectionFactory0" is started.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892854> <BEA-040407> <Default connection factory "QueueConnectionFactory" with its JNDI name "javax.jms.QueueConnectionFactory" is started.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892854> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory1" with its JNDI name "weblogic.jms.XAConnectionFactory1" is started.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892854> <BEA-040306> <JMS service is active now.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <Server> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892855> <BEA-002622> <The protocol "[https, t3, snmp, cluster-broadcast-secure, ldaps, cluster-broadcast, ldap, http, iiop, admin, t3s, iiops]" is now configured.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <Store> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892891> <BEA-280009> <The persistent file store "_WLS_AdminServer" (7fd4e6bb-e35c-4f95-91cb-ca5346be1489) has been opened: blockSize=512 actualWritePolicy="Direct-Write(read-buffered)" explicitIOEnforced=false records=81.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <Connector> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892903> <BEA-190000> <Initializing J2EE Connector Service.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <Connector> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892904> <BEA-190001> <J2EE Connector Service initialized successfully.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JMX> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892944> <BEA-149512> <JMX Connector Server started at service:jmx:iiop://192.168.0.223:7001/jndi/weblogic.management.mbeanservers.runtime.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JDBC> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892946> <BEA-001135> <Initializing the JDBC service.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JDBC> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892952> <BEA-001137> <Initialization complete.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JDBC> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892952> <BEA-001138> <Resuming the JDBC service.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <JDBC> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892952> <BEA-001140> <Resume complete.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <HTTP> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892952> <BEA-101128> <Initializing HTTP services.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <HTTP> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892959> <BEA-101135> <AdminServer is the default Web server.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <HTTP> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892959> <BEA-101052> <[HttpServer (defaultWebserver) name: AdminServer] Initialized> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Info> <HTTP> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892961> <BEA-101129> <Initializing the Web application container.> 
+####<Mar 24, 2016 12:51:32 AM GMT+03:00> <Error> <Configuration Management> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769892997> <BEA-150000> <An error occurred while establishing a connection back to the Adminstration Server t3://192.168.0.223:7001 during startup. Since bootstrap succeeded, check that t3://192.168.0.223:7001 uniquely identifies the Administration Server.
+javax.naming.ConfigurationException: Cannot register for disconnect events on local server
+	at weblogic.server.channels.RemoteChannelServiceImpl.registerInternal(RemoteChannelServiceImpl.java:234)
+	at weblogic.server.channels.RemoteChannelServiceImpl.registerForever(RemoteChannelServiceImpl.java:190)
+	at weblogic.protocol.ConnectMonitorFactory.registerForever(ConnectMonitorFactory.java:54)
+	at weblogic.management.provider.MSIService.registerForReconnectToAdminServer(MSIService.java:188)
+	at weblogic.management.mbeanservers.compatibility.internal.CompatibilityMBeanServerService.start(CompatibilityMBeanServerService.java:183)
+	at weblogic.server.AbstractServerService.postConstruct(AbstractServerService.java:78)
+	at sun.reflect.GeneratedMethodAccessor11.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.glassfish.hk2.utilities.reflection.ReflectionHelper.invoke(ReflectionHelper.java:1017)
+	at org.jvnet.hk2.internal.ClazzCreator.postConstructMe(ClazzCreator.java:388)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:430)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:456)
+	at org.glassfish.hk2.runlevel.internal.AsyncRunLevelContext.findOrCreate(AsyncRunLevelContext.java:225)
+	at org.glassfish.hk2.runlevel.RunLevelContext.findOrCreate(RunLevelContext.java:82)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2488)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:98)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:87)
+	at org.glassfish.hk2.runlevel.internal.CurrentTaskFuture$QueueRunner.oneJob(CurrentTaskFuture.java:1162)
+	at org.glassfish.hk2.runlevel.internal.CurrentTaskFuture$QueueRunner.run(CurrentTaskFuture.java:1147)
+	at org.glassfish.hk2.runlevel.internal.CurrentTaskFuture$UpOneLevel.run(CurrentTaskFuture.java:753)
+	at weblogic.work.SelfTuningWorkManagerImpl$WorkAdapterImpl.run(SelfTuningWorkManagerImpl.java:553)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:311)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:263)
+> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <WorkManager> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893112> <BEA-002903> <Creating Work Manager from "weblogic.wsee.mdb.DispatchPolicy" WorkManagerMBean for application "bea_wls_internal"> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <org.hibernate.validator.util.Version> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893255> <BEA-000000> <Hibernate Validator 12.1.3.0.0> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <org.hibernate.validator.engine.resolver.DefaultTraversableResolver> <iRAV.net> <AdminServer> <[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893258> <BEA-000000> <Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <JDBC> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893313> <BEA-001144> <Force Suspending the JDBC service.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <JDBC> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893313> <BEA-001146> <Force suspend of the JDBC service completed.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <JDBC> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893313> <BEA-001147> <Shutting down the JDBC service.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <JDBC> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893313> <BEA-001149> <Shutdown of the JDBC service has completed.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <JMX> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893314> <BEA-149513> <JMX Connector Server stopped at service:jmx:iiop://192.168.0.223:7001/jndi/weblogic.management.mbeanservers.runtime.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <MessagingBridge> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893318> <BEA-200001> <The messaging bridge service has successfully shut down.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893319> <BEA-040308> <JMS service is suspending.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893320> <BEA-040107> <Undeployed 8 default connection factories.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <JMS> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893320> <BEA-040015> <JMS shutdown is complete.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Critical> <WebLogicServer> <iRAV.net> <AdminServer> <main> <<WLS Kernel>> <> <> <1458769893324> <BEA-000362> <Server failed. Reason: 
+
+There are 1 nested errors:
+
+javax.naming.ConfigurationException: Cannot register for disconnect events on local server
+	at weblogic.server.channels.RemoteChannelServiceImpl.registerInternal(RemoteChannelServiceImpl.java:234)
+	at weblogic.server.channels.RemoteChannelServiceImpl.registerForever(RemoteChannelServiceImpl.java:190)
+	at weblogic.protocol.ConnectMonitorFactory.registerForever(ConnectMonitorFactory.java:54)
+	at weblogic.management.provider.MSIService.registerForReconnectToAdminServer(MSIService.java:188)
+	at weblogic.management.mbeanservers.compatibility.internal.CompatibilityMBeanServerService.start(CompatibilityMBeanServerService.java:183)
+	at weblogic.server.AbstractServerService.postConstruct(AbstractServerService.java:78)
+	at sun.reflect.GeneratedMethodAccessor11.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.glassfish.hk2.utilities.reflection.ReflectionHelper.invoke(ReflectionHelper.java:1017)
+	at org.jvnet.hk2.internal.ClazzCreator.postConstructMe(ClazzCreator.java:388)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:430)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:456)
+	at org.glassfish.hk2.runlevel.internal.AsyncRunLevelContext.findOrCreate(AsyncRunLevelContext.java:225)
+	at org.glassfish.hk2.runlevel.RunLevelContext.findOrCreate(RunLevelContext.java:82)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2488)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:98)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:87)
+	at org.glassfish.hk2.runlevel.internal.CurrentTaskFuture$QueueRunner.oneJob(CurrentTaskFuture.java:1162)
+	at org.glassfish.hk2.runlevel.internal.CurrentTaskFuture$QueueRunner.run(CurrentTaskFuture.java:1147)
+	at org.glassfish.hk2.runlevel.internal.CurrentTaskFuture$UpOneLevel.run(CurrentTaskFuture.java:753)
+	at weblogic.work.SelfTuningWorkManagerImpl$WorkAdapterImpl.run(SelfTuningWorkManagerImpl.java:553)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:311)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:263)
+
+> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Notice> <WebLogicServer> <iRAV.net> <AdminServer> <main> <<WLS Kernel>> <> <> <1458769893326> <BEA-000365> <Server state changed to FAILED.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Error> <WebLogicServer> <iRAV.net> <AdminServer> <main> <<WLS Kernel>> <> <> <1458769893326> <BEA-000383> <A critical service failed. The server will shut itself down.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Notice> <WebLogicServer> <iRAV.net> <AdminServer> <main> <<WLS Kernel>> <> <> <1458769893327> <BEA-000365> <Server state changed to FORCE_SHUTTING_DOWN.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <WebLogicServer> <iRAV.net> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1458769893327> <BEA-000236> <Stopping execute threads.> 
+####<Mar 24, 2016 12:51:33 AM GMT+03:00> <Info> <WebLogicServer> <iRAV.net> <AdminServer> <main> <<WLS Kernel>> <> <> <1458769893328> <BEA-000238> <Shutdown has completed.> 

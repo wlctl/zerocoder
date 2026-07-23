@@ -1,0 +1,86 @@
+<section class="file-table">
+  <header class="file-table__header">
+    <div class="file-table__title">
+      <span class="file-table__name">{{ file.filename }}</span>
+      <span class="file-table__meta muted small">
+        {{ fmtSize(file.size) }} · {{ file.encoding || '?' }} ·
+        {{ file.record_count ?? 0 }} записей ·
+        {{ file.first_ts || '—' }} → {{ file.last_ts || '—' }}
+      </span>
+    </div>
+    <div class="file-table__actions">
+      <button type="button" class="btn btn--sm btn--ghost" (click)="showChart.set(!showChart())">
+        {{ showChart() ? 'скрыть график' : 'показать график' }}
+      </button>
+      <button type="button" class="btn btn--sm btn--ghost" (click)="detach.emit(file.id)">в новое окно</button>
+      <button type="button" class="btn btn--sm btn--danger" (click)="close.emit(file.id)">закрыть</button>
+    </div>
+  </header>
+
+  @if (showChart()) {
+    <app-per-file-chart
+      [dataInput]="histogram()"
+      [bucketInput]="bucket()"
+      (bucketChange)="onBucket($event)"
+    ></app-per-file-chart>
+  }
+
+  @if (error()) {
+    <div class="alert alert--error small">{{ error() }}</div>
+  }
+
+  <div class="file-table__pagesize">
+    <label>строк на странице:
+      <select [ngModel]="limit()" (ngModelChange)="setLimit(+$event)">
+        <option [ngValue]="10">10</option>
+        <option [ngValue]="25">25</option>
+        <option [ngValue]="50">50</option>
+        <option [ngValue]="100">100</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-ts">ts</th>
+          <th class="col-level">level</th>
+          <th class="col-comp">component</th>
+          <th>message</th>
+          <th class="col-raw">raw</th>
+          <th class="col-pin">📌</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if (loading()) {
+          <tr><td colspan="6" class="muted">загрузка…</td></tr>
+        }
+        @else if (entries().length === 0) {
+          <tr><td colspan="6" class="muted">нет записей.</td></tr>
+        }
+        @for (e of entries(); track e.id) {
+          <tr [style.background]="rowColor(e) ? rowColor(e)! + '20' : null">
+            <td class="col-ts">{{ e.ts_raw || e.ts || '—' }}</td>
+            <td class="col-level">{{ e.level || '—' }}</td>
+            <td class="col-comp">{{ e.component || '—' }}</td>
+            <td [innerHTML]="highlightText(e.message)"></td>
+            <td class="col-raw muted small" [innerHTML]="highlightText(e.raw_line)"></td>
+            <td class="col-pin">
+              <button type="button" class="pin-btn" title="закрепить аннотацию на записи"
+                (click)="pinEntry.emit({ file_analyze_id: file.id, entry_id: e.id, ts: e.ts ?? null })">📌</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <footer class="file-table__pager">
+    <button type="button" class="btn btn--sm" [disabled]="offset() === 0" (click)="prev()">← prev</button>
+    <span class="muted small">
+      {{ offset() }}–{{ pageEnd() }} из {{ total() }}
+    </span>
+    <button type="button" class="btn btn--sm" [disabled]="offset() + limit() >= total()" (click)="next()">next →</button>
+  </footer>
+</section>

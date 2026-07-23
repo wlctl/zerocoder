@@ -1,0 +1,290 @@
+<div class="viewer">
+  <header class="viewer__top">
+    <button type="button" class="btn btn--ghost" (click)="back()">← к загрузкам</button>
+    <h1>Просмотр</h1>
+    <button type="button" class="btn btn--danger" (click)="clearAll()">Очистить фильтры и подсветку</button>
+  </header>
+
+  @if (error()) {
+    <div class="alert alert--error">{{ error() }}</div>
+  }
+  @if (loading()) {
+    <p class="muted">Загрузка…</p>
+  }
+
+  @if (upload(); as u) {
+    <section class="card header-card">
+      <div class="header-card__row">
+        <span class="header-card__name">{{ u.filename }}</span>
+        <span class="badge">{{ u.kind }}</span>
+      </div>
+      <div class="header-card__meta muted small">
+        размер: {{ fmtSize(u.size) }} · загружен: {{ u.uploaded_at }} · статус: {{ u.status }}
+      </div>
+      @if (u.kind === 'zip') {
+        <div class="header-card__meta muted small">
+          файлов в архиве: {{ u.file_count ?? 0 }}
+        </div>
+      }
+      @if (u.first_ts || u.last_ts) {
+        <div class="header-card__meta muted small">
+          ts: {{ u.first_ts || '—' }} → {{ u.last_ts || '—' }}
+        </div>
+      }
+    </section>
+
+    <div class="grid">
+      <!-- File selector -->
+      <section class="card">
+        <h2>Файлы</h2>
+        <div class="selector-actions">
+          <button type="button" class="btn btn--sm btn--ghost" (click)="selectAll()">все</button>
+          <button type="button" class="btn btn--sm btn--ghost" (click)="selectNone()">снять</button>
+        </div>
+        <ul class="file-list">
+          @for (f of files(); track f.id) {
+            <li class="file-list__item">
+              <label>
+                <input
+                  type="checkbox"
+                  [checked]="selected().has(f.id)"
+                  (change)="toggleFile(f.id)"
+                />
+                <span class="file-list__name">{{ f.filename }}</span>
+                <span class="muted small">{{ f.record_count ?? 0 }} зап.</span>
+                @if (detached().has(f.id)) {
+                  <button
+                    type="button"
+                    class="badge badge--info badge--btn"
+                    title="файл открыт в отдельном окне — вернуть на страницу"
+                    (click)="closeWindow(f.id)"
+                  >
+                    окно ×
+                  </button>
+                }
+              </label>
+            </li>
+          }
+        </ul>
+      </section>
+
+      <!-- Search filters -->
+      <section class="card">
+        <h2>Поиск</h2>
+        <div class="search-add">
+          <input
+            type="text"
+            placeholder="текст / регулярка…"
+            [ngModel]="newSearchQ()"
+            (ngModelChange)="newSearchQ.set($event)"
+            (keyup.enter)="addSearch()"
+          />
+          <select [ngModel]="newSearchFields()" (ngModelChange)="newSearchFields.set($event)">
+            <option value="all">все поля</option>
+            <option value="raw">raw</option>
+          </select>
+          <select [ngModel]="newSearchMode()" (ngModelChange)="newSearchMode.set($event)" title="режим поиска">
+            <option value="text">текст</option>
+            <option value="regex">регулярка</option>
+          </select>
+          <input
+            type="text"
+            placeholder="attrs k1:v1,k2:v2"
+            [ngModel]="newSearchAttrs()"
+            (ngModelChange)="newSearchAttrs.set($event)"
+            title="фильтр по атрибутам (json_extract)"
+          />
+          <button type="button" class="btn btn--sm" (click)="addSearch()">добавить</button>
+        </div>
+        <ul class="chip-list">
+          @for (f of searchFilters(); track $index) {
+            <li class="chip">
+              <span>«{{ f.q }}» [{{ f.fields }}] @if (f.mode === 'regex') { <span class="chip__badge">regex</span> } @if (f.attrs) { <span class="chip__badge">{{ f.attrs }}</span> }</span>
+              <button type="button" class="chip__x" (click)="removeSearch($index)">×</button>
+            </li>
+          }
+        </ul>
+        @if (searchResults().length > 0) {
+          <p class="muted small">найдено записей (мульти-файловый поиск): {{ searchResults().length }}</p>
+        }
+      </section>
+
+      <!-- Timeline -->
+      <section class="card">
+        <h2>Таймлайн</h2>
+        @if (timeline().min || timeline().max) {
+          <div class="timeline-slider">
+            <div class="dual-range">
+              <div class="dual-range__track"></div>
+              <div
+                class="dual-range__fill"
+                [style.left.%]="fillLeft()"
+                [style.width.%]="fillWidth()"
+              ></div>
+              <input
+                type="range"
+                class="dual-range__input"
+                [min]="minMs()"
+                [max]="maxMs()"
+                step="1000"
+                [value]="labelFromMs()"
+                (input)="onFromInput($any($event.target).valueAsNumber)"
+                (change)="commitFrom($any($event.target).valueAsNumber)"
+              />
+              <input
+                type="range"
+                class="dual-range__input"
+                [min]="minMs()"
+                [max]="maxMs()"
+                step="1000"
+                [value]="labelToMs()"
+                (input)="onToInput($any($event.target).valueAsNumber)"
+                (change)="commitTo($any($event.target).valueAsNumber)"
+              />
+            </div>
+            <div class="timeline-labels">
+              <span class="timeline-labels__from">{{ fmtMs(labelFromMs()) }}</span>
+              <button type="button" class="btn btn--sm btn--ghost" (click)="resetTimeline()">сброс</button>
+              <span class="timeline-labels__to">{{ fmtMs(labelToMs()) }}</span>
+            </div>
+          </div>
+          <details class="timeline-precise">
+            <summary class="muted small">точный ввод дат</summary>
+            <div class="timeline-range">
+              <label>от
+                <input
+                  type="datetime-local"
+                  [ngModel]="timeline().from"
+                  (ngModelChange)="setTimelineFrom($event)"
+                />
+              </label>
+              <label>до
+                <input
+                  type="datetime-local"
+                  [ngModel]="timeline().to"
+                  (ngModelChange)="setTimelineTo($event)"
+                />
+              </label>
+            </div>
+          </details>
+        } @else {
+          <p class="muted small">нет ts-границ для выборки.</p>
+        }
+      </section>
+
+      <!-- Highlight -->
+      <section class="card">
+        <h2>Подсветить</h2>
+        <div class="hl-add">
+          <input
+            type="text"
+            placeholder="текст для подсветки…"
+            [ngModel]="newHighlightText()"
+            (ngModelChange)="newHighlightText.set($event)"
+            (keyup.enter)="addHighlight()"
+          />
+          <input
+            type="color"
+            [ngModel]="newHighlightColor()"
+            (ngModelChange)="newHighlightColor.set($event)"
+          />
+          <button type="button" class="btn btn--sm" (click)="addHighlight()">добавить</button>
+        </div>
+        @if (lexemes().length > 0) {
+          <div class="lexemes">
+            <span class="muted small">кластерные лексемы:</span>
+            @for (lx of lexemes(); track lx.term) {
+              <button type="button" class="chip chip--lex" (click)="addLexemeHighlight(lx.term)">
+                {{ lx.term }} ({{ lx.count }})
+              </button>
+            }
+          </div>
+        }
+        <ul class="chip-list">
+          @for (h of highlights(); track h.id) {
+            <li class="chip">
+              <span class="chip__swatch" [style.background]="h.color"></span>
+              <span>«{{ h.text }}»</span>
+              <button type="button" class="chip__x" (click)="removeHighlight(h)">×</button>
+            </li>
+          }
+        </ul>
+      </section>
+
+      <!-- Annotations / pin-points (US-0006) -->
+      <section class="card">
+        <app-annotation-panel
+          [annotations]="annotations()"
+          [fileNames]="fileNames()"
+          (add)="addAnnotation($event)"
+          (remove)="removeAnnotation($event)"
+        ></app-annotation-panel>
+      </section>
+    </div>
+
+    <!-- Preset bar (US-0006) -->
+    <section class="card preset-card">
+      <app-preset-bar
+        [presets]="presets()"
+        (load)="loadPreset($event)"
+        (save)="savePreset($event)"
+        (delete)="deletePreset($event)"
+      ></app-preset-bar>
+    </section>
+
+    <!-- File tables / Correlation -->
+    <section class="tables">
+      <div class="tables__mode">
+        <h2>@if (correlateMode()) { Корреляция } @else { Таблицы по файлам }</h2>
+        <label class="mode-toggle">
+          <input
+            type="checkbox"
+            [checked]="correlateMode()"
+            (change)="correlateMode.set(!correlateMode())"
+          />
+          <span>Корреляция (общий таймлайн)</span>
+        </label>
+      </div>
+
+      @if (selectedFiles().length === 0) {
+        <p class="muted">Нет выбранных файлов. Отметьте файлы в селекторе выше.</p>
+      } @else if (correlateMode()) {
+        @if (histByFile().length > 0) {
+          <app-stacked-chart
+            [dataInput]="histByFile()"
+            [bucketInput]="stackedBucket()"
+            [fileIds]="selectedFileIds()"
+            [fileNames]="fileNames()"
+            [annotationsInput]="annotations()"
+            (bucketChange)="onStackedBucket($event)"
+          ></app-stacked-chart>
+        }
+        <app-correlate-table
+          [uploadId]="u.id"
+          [fileIds]="selectedFileIds()"
+          [highlights]="highlights()"
+          [searchQ]="activeSearchQ()"
+          [searchMode]="activeSearchMode()"
+          [searchAttrs]="activeSearchAttrs()"
+          [from]="timeline().from"
+          [to]="timeline().to"
+          (pinEntry)="onPinEntry($event)"
+        ></app-correlate-table>
+      } @else {
+        @for (f of selectedFiles(); track f.id) {
+          <app-file-table
+            [uploadId]="u.id"
+            [file]="f"
+            [highlights]="highlights()"
+            [searchQ]="activeSearchQ()"
+            [from]="timeline().from"
+            [to]="timeline().to"
+            (close)="closeTable($event)"
+            (detach)="openInWindow($event)"
+            (pinEntry)="onPinEntry($event)"
+          ></app-file-table>
+        }
+      }
+    </section>
+  }
+</div>

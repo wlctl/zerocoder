@@ -1,0 +1,90 @@
+{
+  "id": "US-0006",
+  "title": "Пресеты просмотра, аннотации/пин-точки, поиск по регулярке/attrs, стекированный по файлам график",
+  "status": "ready",
+  "priority": "should",
+  "domain": "viewer",
+  "project": [
+    "backend",
+    "frontend"
+  ],
+  "target": [
+    "go",
+    "angular"
+  ],
+  "spec_ref": "architect/specs/viewer.spec.md",
+  "created": "2026-07-24",
+  "updated": "2026-07-24",
+  "asRole": "аналитик тех.поддержки",
+  "wantGoal": "сохранять удачные комбинации фильтров/подкраски в пресеты, оставлять аннотации-пин-точки на записях и моментах времени, искать по регулярным выражениям и атрибутам записей, и видеть стекированный по файлам график событий",
+  "soValue": "быстро воспроизводить типовые разборы логов, помечать важные места для коллег/будущих заходов и гибко находить события по структуре записей",
+  "context": "Расширение домена viewer поверх US-0003/0004/0005. Текущий просмотрщик имеет мульти-фильтр поиска (LIKE), таймлайн, подкраску, пофайловые таблицы и режим корреляции с суммарным графиком. Нужно: пресеты (запомнить удачный вид), аннотации-пин-точки (entry-pin и time-pin), поиск по regex и attrs (json_extract), стекированный по файлам график в корреляции. Источник — SQLite (MVP), JSON1 + скалярная REGEXP через modernc.org/sqlite. Go первичен; Python — полный функционал по запросу. Контракт — architect/specs/viewer.spec.md (0.3.0). Попутно — хотфикс 500 на GET /api/files (scanFileRows 13 vs 16 колонок) и переименование UI «Подкраска»→«Подсветить».",
+  "deliverables": [
+    "Пресеты: GET/POST /api/uploads/{id}/presets, DELETE /{pid}; {name, snapshot JSON (searchFilters, timeline, highlights, selectedFileIds, correlateMode, pageSize)}; таблица t_view_presets (FK CASCADE по upload_id)",
+    "Аннотации/пин-точки: GET/POST /api/uploads/{id}/annotations, DELETE /{aid}; entry-pin (file_analyze_id+entry_id, БЕЗ FK — dangling допускается) или time-pin (ts); note+color обязательны; ровно один тип пина; таблица t_annotations (FK CASCADE по upload_id, индексы upload_id/ts)",
+    "Поиск regex/attrs: search/correlate +mode=text|regex +attrs=k1:v1,k2:v2; REGEXP — серверная скалярная функция (modernc RegisterScalarFunction, sync.Once + sync.Map кеш); невалидный паттерн → 400; attrs → json_extract LIKE; в correlate предикаты в общем where (COUNT-safe)",
+    "Стекированный график: GET /api/uploads/{id}/histogram-by-file?bucket=&from=&to=&files= → [{bucket, file_analyze_id, count}]; фронт агрегирует в стекированные сегменты (FILE_PALETTE по индексу, цикл %len)",
+    "Хотфикс 500: scanFileRows выровнен под 16 колонок getFiles-SELECT; TestGetFiles (регрессия); переименование «Подкраска»→«Подсветить» (5 вхождений + USAGE.md)"
+  ],
+  "acceptanceCriteria": [
+    { "id": "AC-1", "criterion": "search?mode=regex возвращает совпадающие записи по полям; невалидный паттерн [bad( → 400 (не 500)", "verified": true },
+    { "id": "AC-2", "criterion": "search?attrs=user:alice → json_extract LIKE; отсутствующий ключ → 0; несколько пар → AND; correlate?attrs total согласован с items (COUNT-safe)", "verified": true },
+    { "id": "AC-3", "criterion": "GET histogram-by-file?bucket=hour&files=f1,f2 → [{bucket, file_analyze_id, count}] per-file сегменты; from/to окно работает", "verified": true },
+    { "id": "AC-4", "criterion": "Пресеты CRUD: POST → 201 {id,name,snapshot,created_at}; GET список; DELETE → 204; snapshot round-trip JSON", "verified": true },
+    { "id": "AC-5", "criterion": "Аннотации CRUD: entry-pin и time-pin → 201; nullable → JSON null; note+color обязательны; смешанный/половинчатый → 400; DELETE → 204; GET список", "verified": true },
+    { "id": "AC-6", "criterion": "CASCADE: удаление upload → GET presets/annotations → [] (FK upload_id); DSN foreign_keys=1 на каждом соединении (footer aggregates пересчитываются)", "verified": true },
+    { "id": "AC-7", "criterion": "REGEXP-регистрация идемпотентна (sync.Once): db.Open дважды — без ошибки, REGEXP работает на обоих соединениях", "verified": true },
+    { "id": "AC-8", "criterion": "Frontend: режим text/regex + поле attrs + чипы-бейджи; бар пресетов; панель аннотаций (форма time-pin + 📌 entry-pin); стекированный график с time-pin маркерами; FILE_PALETTE в palette.ts", "verified": true },
+    { "id": "AC-9", "criterion": "go build/vet/gofmt/test -race зелёные (TestGetFiles/TestSearchRegex/TestSearchAttrs/TestCorrelateRegex/TestHistogramByFile/TestPresetsCRUD/TestAnnotationsCRUD/TestREGEXPRegistrationIdempotent + TestDeleteUploadCascade); ng build/ng test 40/40 зелёные", "verified": true },
+    { "id": "AC-10", "criterion": "la.conf без новых обязательных полей; env переопределения не затронуты; Go-плагины не затронуты", "verified": true }
+  ],
+  "nonFunctionalRequirements": [
+    "REGEXP — серверная скалярная функция; кеш *regexp.Regexp процесс-глобальный (sync.Map); sync.Once для регистрации (повторная регистрация в modernc — ошибка)",
+    "json_extract (JSON1) встроен в modernc.org/sqlite — без внешних расширений",
+    "COUNT-safe: regex/attrs-предикаты в общем where для correlate (COUNT + records)",
+    "Аннотации entry-pin БЕЗ FK → dangling допускается (переживает re-ингест); CASCADE только по upload_id",
+    "Пресет — снимок на момент сохранения; правки не синхронизируются; один JSON-blob",
+    "Стекированный график — клиент-сайд агрегация; цвет стабилен per file-id по индексу (цикл %len при >10 файлов)",
+    "Секреты не в репозитории; la.conf/la.db — runtime/сгенерированные",
+    "Python-релиз — те же эндпоинты/таблицы/контракт (полный функционал по запросу)",
+    "Поставка — только ZIP; Node только build-time"
+  ],
+  "dependencies": [
+    "US-0002",
+    "US-0003",
+    "US-0004",
+    "US-0005"
+  ],
+  "openQuestions": [
+    "Версионирование/дифф пресетов, импорт-экспорт — на потом (MVP: один snapshot на пресет)",
+    "Аннотации: привязка к диапазону ts, теги/группировка — на потом (MVP: точечные пины)",
+    "Полнотекстовый FTS5 (поверх LIKE/REGEXP) — отдельная ЮС",
+    "Цветовая палитра файлов — детерминированная по индексу (расширяемо)"
+  ],
+  "trace": {
+    "spec": "architect/specs/viewer.spec.md",
+    "spec_version": "0.3.0",
+    "code": [
+      "release/backend/go/internal/db/migrations.go (0004 t_view_presets/t_annotations)",
+      "release/backend/go/internal/db/db.go (REGEXP sync.Once + DSN foreign_keys)",
+      "release/backend/go/internal/server/handlers_viewer.go (regex/attrs search+correlate, histogram-by-file, presets/annotations CRUD, attrsPredicates, bucketFmt)",
+      "release/backend/go/internal/server/helpers.go (scanFileRows 16-col fix)",
+      "release/backend/go/internal/server/server.go (routes)",
+      "release/frontend/src/app/components/stacked-chart/ (StackedChartComponent + bucketOf)",
+      "release/frontend/src/app/components/annotation-panel/ (AnnotationPanelComponent)",
+      "release/frontend/src/app/components/preset-bar/ (PresetBarComponent)",
+      "release/frontend/src/app/components/palette.ts (FILE_PALETTE)",
+      "release/frontend/src/app/pages/viewer/viewer.component.* (wiring: presets/annotations/regex/attrs/stacked/pinEntry)",
+      "release/frontend/src/app/services/api.service.ts (mode/attrs + 7 new methods)"
+    ],
+    "tests": [
+      "release/backend/go/internal/server/api_test.go (TestGetFiles/TestSearchRegex/TestSearchAttrs/TestCorrelateRegex/TestHistogramByFile/TestPresetsCRUD/TestAnnotationsCRUD/TestREGEXPRegistrationIdempotent + TestDeleteUploadCascade)",
+      "release/frontend/src/app/components/stacked-chart/stacked-chart.component.spec.ts",
+      "release/frontend/src/app/components/annotation-panel/annotation-panel.component.spec.ts",
+      "release/frontend/src/app/components/preset-bar/preset-bar.component.spec.ts",
+      "release/frontend/src/app/services/api.service.spec.ts"
+    ],
+    "changelog": "changelog/CHANGELOG.md#0.6.0",
+    "release": "release/backend/go/build/devagent (0.6.0)"
+  }
+}

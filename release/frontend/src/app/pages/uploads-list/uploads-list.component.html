@@ -1,0 +1,124 @@
+<div class="page">
+  <header class="page__header">
+    <h1>LogAnalyzer — загрузки</h1>
+    <button type="button" class="btn btn--ghost" (click)="reload()">Обновить</button>
+  </header>
+
+  @if (error()) {
+    <div class="alert alert--error">{{ error() }}</div>
+  }
+
+  <section class="upload">
+    <div
+      class="dropzone"
+      [class.dropzone--active]="dragOver()"
+      (dragover)="onDragOver($event)"
+      (dragleave)="onDragLeave($event)"
+      (drop)="onDrop($event)"
+      (click)="$any(fileInput).click()"
+    >
+      <input #fileInput type="file" multiple class="dropzone__input" (change)="onFilesPicked($any($event.target).files)" />
+      <p class="dropzone__hint">Перетащите файлы сюда или нажмите для выбора</p>
+      <p class="dropzone__sub muted small">Можно несколько файлов или zip-архив одновременно</p>
+    </div>
+
+    @if (selectedFiles().length > 0) {
+      <ul class="picked">
+        @for (f of selectedFiles(); track f.name; let i = $index) {
+          <li>
+            <span class="picked__name">{{ f.name }}</span>
+            <span class="muted small">{{ fmtSize(f.size) }}</span>
+            <button type="button" class="btn btn--sm btn--ghost" (click)="removeFile(i)">✕</button>
+          </li>
+        }
+      </ul>
+      <div class="upload__actions">
+        <button type="button" class="btn btn--primary" [disabled]="uploading()" (click)="doUpload()">
+          {{ uploading() ? 'Загрузка…' : 'Загрузить ' + selectedFiles().length + ' файл(ов)' }}
+        </button>
+        <button type="button" class="btn btn--ghost" [disabled]="uploading()" (click)="clearSelection()">Очистить</button>
+      </div>
+    }
+
+    @if (uploadError()) {
+      <div class="alert alert--error">{{ uploadError() }}</div>
+    }
+    @if (uploadResults(); as results) {
+      <ul class="upload-results">
+        @for (r of results; track r.filename) {
+          <li [class]="resultClass(r)">
+            <span class="upload-res__name">{{ r.filename }}</span>
+            <span class="upload-res__status">{{ r.status }}</span>
+            <span class="upload-res__text muted small">{{ resultText(r) }}</span>
+          </li>
+        }
+      </ul>
+    }
+  </section>
+
+  <div class="toolbar">
+    <input
+      type="text"
+      placeholder="Фильтр по имени файла…"
+      [value]="filterText()"
+      (input)="filterText.set($any($event.target).value)"
+    />
+  </div>
+
+  <div class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th (click)="setSort('filename')" class="sortable">
+            filename @if (sortKey() === 'filename') { {{ sortDir() === 'asc' ? '▲' : '▼' }} }
+          </th>
+          <th (click)="setSort('size')" class="sortable num">
+            размер @if (sortKey() === 'size') { {{ sortDir() === 'asc' ? '▲' : '▼' }} }
+          </th>
+          <th (click)="setSort('uploaded_at')" class="sortable">
+            загружен @if (sortKey() === 'uploaded_at') { {{ sortDir() === 'asc' ? '▲' : '▼' }} }
+          </th>
+          <th>сводка / файлы</th>
+          <th (click)="setSort('status')" class="sortable">
+            статус @if (sortKey() === 'status') { {{ sortDir() === 'asc' ? '▲' : '▼' }} }
+          </th>
+          <th class="col-action">действие</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if (loading()) {
+          <tr><td colspan="6" class="muted">Загрузка…</td></tr>
+        }
+        @else if (filtered().length === 0) {
+          <tr><td colspan="6" class="muted">Нет загрузок.</td></tr>
+        }
+        @for (u of filtered(); track u.id) {
+          <tr class="row" (click)="openViewer(u)">
+            <td>{{ u.filename }}</td>
+            <td class="num">{{ fmtSize(u.size) }}</td>
+            <td>{{ u.uploaded_at }}</td>
+            <td class="muted small">{{ summaryText(u) }}</td>
+            <td>{{ u.status }}</td>
+            <td class="col-action">
+              <button type="button" class="btn btn--danger btn--sm" (click)="deleteUpload(u, $event)">Удалить</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <section class="stats">
+    <h2>Агрегаты</h2>
+    @if (stats(); as s) {
+      <ul class="stats__list">
+        <li>Размер хранилища: <b>{{ fmtSize(s.storage_size) }}</b></li>
+        <li>Загрузок: <b>{{ fmtNum(s.upload_count) }}</b></li>
+        <li>Файлов: <b>{{ fmtNum(s.file_count) }}</b></li>
+        <li>Записей: <b>{{ fmtNum(s.record_count) }}</b></li>
+      </ul>
+    } @else {
+      <p class="muted">Агрегаты недоступны.</p>
+    }
+  </section>
+</div>

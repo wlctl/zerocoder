@@ -1,0 +1,42 @@
+# LogAnalyzer (la) — runtime / сгенерированные файлы (не в репозитории)
+
+# Конфигурация и БД (создаются при старте из шаблона / авто)
+/la.conf
+/la.db
+/la.db-wal
+/la.db-shm
+*.db
+*.db-wal
+*.db-shm
+
+# PID-файлы скриптов управления процессом
+sh/.run/
+
+# Go сборки
+release/backend/go/build/devagent
+release/backend/go/build/*.exe
+release/backend/go/build/dist/
+
+# Python сборки (вторичный таргет)
+release/backend/python/build/
+release/backend/python/dist/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Frontend сборки (Angular, build-time)
+release/frontend/dist/
+release/frontend/node_modules/
+release/frontend/.angular/
+
+# ZIP-дистрибутивы (артефакт sh/make-dist.sh)
+release/dist/
+
+# Прочее
+*.log
+.DS_Store
+
+# Собранные Go-плагины (.so, воспроизводимы через `make plugins`)
+release/backend/go/parsers/*.so
+release/backend/go/postprocessors/*.so

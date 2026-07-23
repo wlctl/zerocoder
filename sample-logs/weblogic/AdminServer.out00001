@@ -1,0 +1,188 @@
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <INFO> <NodeManager> <Starting WebLogic server with command line: /soft/wls/dev/user_projects/domains/wl_server/bin/startWebLogic.sh >
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MALLOC_PERTURB_=228>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: JAVA_HOME=/soft/wls/jdk>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MS2_PPORT=7005>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ADM_NI=enp4s0:2>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ADM_PPORT=7001>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: JAVA_VM=-server>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: SERVER_NAME=AdminServer>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: PWD=/soft/wls/nm>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: PRODUCTION_MODE=>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: WEBLOGIC_CLASSPATH=/soft/wls/jdk/lib/tools.jar:/soft/wls/1213/wlserver/server/lib/weblogic_sp.jar:/soft/wls/1213/wlserver/server/lib/weblogic.jar:/soft/wls/1213/oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b3/lib/ant-contrib.jar:/soft/wls/1213/wlserver/modules/features/oracle.wls.common.nodemanager_2.0.0.0.jar>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: DERBY_OPTS=-Dderby.system.home=/common/db>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: FMWLAUNCH_CLASSPATH=/soft/wls/1213/oracle_common/modules/features/cieCfg_wls_lib_12.1.3.jar>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ADMIN_URL=192.168.0.223:7001>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: COMMON_JVM_ARGS=-Dweblogic.alternateTypesDirectory='/soft/wls/1213'/oracle_common/modules/oracle.ossoiap_12.1.3,'/soft/wls/1213'/oracle_common/modules/oracle.oamprovider_12.1.3,'/soft/wls/1213'/oracle_common/modules/oracle.jps_12.1.3>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: OHS_NI=enp4s0:1>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: DERBY_CLASSPATH=:/soft/wls/1213/wlserver/common/derby/lib/derbynet.jar:/soft/wls/1213/wlserver/common/derby/lib/derbyclient.jar:/soft/wls/1213/wlserver/common/derby/lib/derby.jar>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: CLASSPATHSEP=:>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: LISTEN_ADDRESS=192.168.0.223>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: NM_PPORT=5556>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MEM_ARGS=-Xms32m -Xmx200m -XX:MaxPermSize=128m>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: PATH=/soft/wls/1213/wlserver/server/bin:/soft/wls/1213/oracle_common/modules/org.apache.ant_1.9.2/bin:/soft/wls/jdk/jre/bin:/soft/wls/jdk/bin:/soft/wls/1213/OPatch:/soft/wls/jdk/bin:/soft/wls/1213/wlserver/server/bin:/soft/wls/1213/wlserver/common/bin:/soft/wls/jdk/bin:.:/usr/local/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/u01/app/oracle/admin/.local/bin:/u01/app/oracle/admin/bin>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: PROFILE_CLASSPATH=/soft/wls/1213/wlserver/server/lib/weblogic_sp.jar:/soft/wls/1213/wlserver/server/lib/weblogic.jar>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: COHERENCE_HOME=/soft/wls/1213/coherence>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MS2_IP=192.168.0.225>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: QTLIB=/usr/lib64/qt-3.3/lib>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: NM_TYPE=plain>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MS1_IP=192.168.0.224>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: TZ=Etc/GMT-3>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ORACLE_HOME=/soft/wls/1213>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: OHS_IP=192.168.0.222>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: LISTEN_PORT=5556>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ORACLE_BASE=/soft/wls>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: BEA_HOME=/soft/wls/1213>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MS2_NI=enp4s0:4>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: NM_PORT=5556>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: LOGNAME=oracle>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: UTILS_MEM_ARGS=-Xms32m -Xmx1024m -XX:MaxPermSize=256m>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: GUESTFISH_PS1=\[\e[1;32m\]><fs>\[\e[0;31m\] >
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: _=/soft/wls/jdk/bin/java>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: G_SLICE=debug-blocks>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: JRE_HOME=/soft/wls/jdk/jre>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: USER=oracle>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ADM_IP=192.168.0.223>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ADMIN_SID=wls1213>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: QT_GRAPHICSSYSTEM_CHECKED=1>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: LANG=en_US.UTF-8>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: TERM=linux>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: KDEDIRS=/usr>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ADM_SPORT=7002>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MAIL=/var/spool/mail/oracle>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: PATHSEP=:>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ANT_CONTRIB=/soft/wls/1213/oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b3>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: HOSTNAME=iRAV.net>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MYWORK=/soft/jdev/12.2/JDEV_HOME/jdeveloper/mywork>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MS1_NI=enp4s0:3>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MODULES_DIR=/soft/wls/1213/oracle_common/modules>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MS2_SPORT=7006>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: HISTSIZE=>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: CAM_NODEMANAGER_JAR_PATH=/soft/wls/1213/wlserver/modules/features/oracle.wls.common.nodemanager_2.0.0.0.jar>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: NM_IP=192.168.0.223>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: DERBY_TOOLS=/soft/wls/1213/wlserver/common/derby/lib/derbytools.jar>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ADMIN_HOME=/soft/wls/admin/scripts>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: XDG_SESSION_ID=667>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: USERNAME=oracle>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: FEATURES_DIR=/soft/wls/1213/oracle_common/modules/features>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: JAVA_VENDOR=Oracle>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: SHLVL=3>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: NM_HOME=/soft/wls/nm>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: NM_HOST=192.168.0.223>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ADM_PORT=7001>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: JAVA_OPTIONS=-Dweblogic.system.BootIdentityFile=/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/security/boot.properties -Dweblogic.nodemanager.ServiceEnabled=true -Dweblogic.nmservice.RotationEnabled=true>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: NM_NI=enp4s0:2>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: OHS_SPORT=443>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: DERBY_HOME=/soft/wls/1213/wlserver/common/derby>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: QTDIR=/usr/lib64/qt-3.3>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: NODEMGR_HOME=/soft/wls/nm>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: LD_LIBRARY_PATH=:/soft/wls/1213/wlserver/server/native/linux/x86_64:/soft/wls/1213/wlserver/server/native/linux/x86_64/oci920_8>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: GUESTFISH_INIT=\e[1;34m>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: OHS_PPORT=80>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: OLDPWD=/soft/wls/nm>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: SHELL=/bin/bash>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: GUESTFISH_OUTPUT=\e[0m>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: FMWCONFIG_CLASSPATH=/soft/wls/jdk/lib/tools.jar:/soft/wls/1213/oracle_common/modules/features/cieCfg_wls_lib_12.1.3.jar:/soft/wls/1213/wlserver/server/lib/weblogic_sp.jar:/soft/wls/1213/wlserver/server/lib/weblogic.jar:/soft/wls/1213/oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b3/lib/ant-contrib.jar>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: GUESTFISH_RESTORE=\e[0m>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: CLASSPATH=/soft/wls/jdk/lib/tools.jar:/soft/wls/1213/wlserver/server/lib/weblogic_sp.jar:/soft/wls/1213/wlserver/server/lib/weblogic.jar:/soft/wls/1213/oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b3/lib/ant-contrib.jar:/soft/wls/1213/wlserver/modules/features/oracle.wls.common.nodemanager_2.0.0.0.jar::/soft/wls/1213>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: DERBY_SYSTEM_HOME=/common/db>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: QTINC=/usr/lib64/qt-3.3/include>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: LC_ALL=en_US.UTF-8>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MW_HOME=/soft/wls/1213>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MS1_PPORT=7003>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: ANT_HOME=/soft/wls/1213/oracle_common/modules/org.apache.ant_1.9.2>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: WL_HOME=/soft/wls/1213/wlserver>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: HISTCONTROL=ignoredups>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: HOME=/u01/app/oracle/admin>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: LESSOPEN=||/usr/bin/lesspipe.sh %s>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: JAVA_USE_64BIT=true>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <FINEST> <NodeManager> <Environment: MS1_SPORT=7004>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <INFO> <NodeManager> <Working directory is '/soft/wls/dev/user_projects/domains/wl_server'>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <INFO> <NodeManager> <Server output log file is '/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out'>
+.
+.
+JAVA Memory arguments: -Xms256m -Xmx512m -XX:CompileThreshold=8000 -XX:PermSize=128m  -XX:MaxPermSize=256m
+.
+CLASSPATH=/soft/wls/dev/user_projects/applications/wl_server/examples/build/serverclasses:/soft/wls/dev/user_projects/applications/wl_server/examples/src:/soft/wls/jdk/lib/tools.jar:/soft/wls/1213/wlserver/server/lib/weblogic_sp.jar:/soft/wls/1213/wlserver/server/lib/weblogic.jar:/soft/wls/1213/oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b3/lib/ant-contrib.jar:/soft/wls/1213/wlserver/modules/features/oracle.wls.common.nodemanager_2.0.0.0.jar:/soft/wls/1213/oracle_common/modules/com.oracle.cie.config-wls-online_8.1.0.0.jar::/soft/wls/1213/wlserver/common/derby/lib/derbynet.jar:/soft/wls/1213/wlserver/common/derby/lib/derbyclient.jar:/soft/wls/1213/wlserver/common/derby/lib/derby.jar:/soft/wls/1213/wlserver/server/lib/xqrl.jar:/soft/wls/jdk/lib/tools.jar:/soft/wls/1213/wlserver/server/lib/weblogic_sp.jar:/soft/wls/1213/wlserver/server/lib/weblogic.jar:/soft/wls/1213/oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b3/lib/ant-contrib.jar:/soft/wls/1213/wlserver/modules/features/oracle.wls.common.nodemanager_2.0.0.0.jar::/soft/wls/1213
+.
+PATH=/soft/wls/1213/wlserver/server/bin:/soft/wls/1213/oracle_common/modules/org.apache.ant_1.9.2/bin:/soft/wls/jdk/jre/bin:/soft/wls/jdk/bin:/soft/wls/1213/wlserver/server/bin:/soft/wls/1213/oracle_common/modules/org.apache.ant_1.9.2/bin:/soft/wls/jdk/jre/bin:/soft/wls/jdk/bin:/soft/wls/1213/OPatch:/soft/wls/jdk/bin:/soft/wls/1213/wlserver/server/bin:/soft/wls/1213/wlserver/common/bin:/soft/wls/jdk/bin:.:/usr/local/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/u01/app/oracle/admin/.local/bin:/u01/app/oracle/admin/bin
+.
+***************************************************
+*  To start WebLogic Server, use a username and   *
+*  password assigned to an admin-level user.  For *
+*  server administration, use the WebLogic Server *
+*  console at http://hostname:port/console        *
+***************************************************
+starting weblogic with Java version:
+java version "1.7.0_79"
+Java(TM) SE Runtime Environment (build 1.7.0_79-b15)
+Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)
+JAVA_OPTIONS: -Dweblogic.system.BootIdentityFile=/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/security/boot.properties -Dweblogic.nodemanager.ServiceEnabled=true -Dweblogic.nmservice.RotationEnabled=true -Xverify:none -Djava.endorsed.dirs=/soft/wls/jdk/jre/lib/endorsed:/soft/wls/1213/oracle_common/modules/endorsed -da -Dwls.home=/soft/wls/1213/wlserver/server -Dweblogic.home=/soft/wls/1213/wlserver/server -Dweblogic.management.server=192.168.0.223:7001 -Dweblogic.utils.cmm.lowertier.ServiceDisabled=true
+Starting WLS with line:
+/soft/wls/jdk/bin/java -server   -Xms256m -Xmx512m -XX:CompileThreshold=8000 -XX:PermSize=128m  -XX:MaxPermSize=256m -Dweblogic.Name=AdminServer -Djava.security.policy=/soft/wls/1213/wlserver/server/lib/weblogic.policy -Dweblogic.system.BootIdentityFile=/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/security/boot.properties -Dweblogic.nodemanager.ServiceEnabled=true -Dweblogic.nmservice.RotationEnabled=true -Xverify:none -Djava.endorsed.dirs=/soft/wls/jdk/jre/lib/endorsed:/soft/wls/1213/oracle_common/modules/endorsed  -da -Dwls.home=/soft/wls/1213/wlserver/server -Dweblogic.home=/soft/wls/1213/wlserver/server   -Dweblogic.management.server=192.168.0.223:7001  -Dweblogic.utils.cmm.lowertier.ServiceDisabled=true  weblogic.Server
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <Info> <Security> <BEA-090905> <Disabling the CryptoJ JCE Provider self-integrity check for better startup performance. To enable this check, specify -Dweblogic.security.allowCryptoJDefaultJCEVerification=true.> 
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <Info> <Security> <BEA-090906> <Changing the default Random Number Generator in RSA CryptoJ from ECDRBG128 to FIPS186PRNG. To disable this change, specify -Dweblogic.security.allowCryptoJDefaultPRNG=true.> 
+<Mar 24, 2016 12:51:27 AM GMT+03:00> <Info> <WebLogicServer> <BEA-000377> <Starting WebLogic Server with Java HotSpot(TM) 64-Bit Server VM Version 24.79-b02 from Oracle Corporation.> 
+<Mar 24, 2016 12:51:27 AM GMT+03:00> <Info> <Management> <BEA-141298> <Could not register with the Administration Server: java.rmi.RemoteException: [Deployer:149147]Could not reach the Administration Server through any of its URLs: "http://192.168.0.223:7001".> 
+<Mar 24, 2016 12:51:27 AM GMT+03:00> <Info> <Management> <BEA-141107> <Version: WebLogic Server 12.1.3.0.0  Wed May 21 18:53:34 PDT 2014 1604337 > 
+<Mar 24, 2016 12:51:28 AM GMT+03:00> <Alert> <Management> <BEA-141151> <The Administration Server could not be reached at http://192.168.0.223:7001.> 
+<Mar 24, 2016 12:51:28 AM GMT+03:00> <Info> <Configuration Management> <BEA-150018> <This server is being started in Managed Server independence mode in the absence of the Administration Server.> 
+<Mar 24, 2016 12:51:28 AM GMT+03:00> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STARTING.> 
+<Mar 24, 2016 12:51:28 AM GMT+03:00> <Info> <WorkManager> <BEA-002900> <Initializing self-tuning thread pool.> 
+<Mar 24, 2016 12:51:28 AM GMT+03:00> <Info> <WorkManager> <BEA-002942> <CMM memory level becomes 0. Setting standby thread pool size to 256.> 
+<Mar 24, 2016 12:51:28 AM GMT+03:00> <Notice> <Log Management> <BEA-170019> <The server log file /soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.log is opened. All server side log events will be written to this file.> 
+<Mar 24, 2016 12:51:29 AM GMT+03:00> <Notice> <Security> <BEA-090082> <Security initializing using security realm myrealm.> 
+<Mar 24, 2016 12:51:29 AM GMT+03:00> <Error> <Configuration Management> <BEA-150000> <An error occurred while establishing a connection back to the Adminstration Server t3://192.168.0.223:7001 during startup. Since bootstrap succeeded, check that t3://192.168.0.223:7001 uniquely identifies the Administration Server.
+javax.naming.ConfigurationException: Cannot register for disconnect events on local server
+	at weblogic.server.channels.RemoteChannelServiceImpl.registerInternal(RemoteChannelServiceImpl.java:234)
+	at weblogic.server.channels.RemoteChannelServiceImpl.registerForever(RemoteChannelServiceImpl.java:190)
+	at weblogic.protocol.ConnectMonitorFactory.registerForever(ConnectMonitorFactory.java:54)
+	at weblogic.management.provider.MSIService.registerForReconnectToAdminServer(MSIService.java:188)
+	at weblogic.management.mbeanservers.compatibility.internal.CompatibilityMBeanServerService.start(CompatibilityMBeanServerService.java:183)
+	Truncated. see log file for complete stacktrace
+> 
+<Mar 24, 2016 12:51:29 AM GMT+03:00> <Critical> <WebLogicServer> <BEA-000362> <Server failed. Reason: 
+
+There are 1 nested errors:
+
+javax.naming.ConfigurationException: Cannot register for disconnect events on local server
+	at weblogic.server.channels.RemoteChannelServiceImpl.registerInternal(RemoteChannelServiceImpl.java:234)
+	at weblogic.server.channels.RemoteChannelServiceImpl.registerForever(RemoteChannelServiceImpl.java:190)
+	at weblogic.protocol.ConnectMonitorFactory.registerForever(ConnectMonitorFactory.java:54)
+	at weblogic.management.provider.MSIService.registerForReconnectToAdminServer(MSIService.java:188)
+	at weblogic.management.mbeanservers.compatibility.internal.CompatibilityMBeanServerService.start(CompatibilityMBeanServerService.java:183)
+	at weblogic.server.AbstractServerService.postConstruct(AbstractServerService.java:78)
+	at sun.reflect.GeneratedMethodAccessor12.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.glassfish.hk2.utilities.reflection.ReflectionHelper.invoke(ReflectionHelper.java:1017)
+	at org.jvnet.hk2.internal.ClazzCreator.postConstructMe(ClazzCreator.java:388)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:430)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:456)
+	at org.glassfish.hk2.runlevel.internal.AsyncRunLevelContext.findOrCreate(AsyncRunLevelContext.java:225)
+	at org.glassfish.hk2.runlevel.RunLevelContext.findOrCreate(RunLevelContext.java:82)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2488)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:98)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:87)
+	at org.glassfish.hk2.runlevel.internal.CurrentTaskFuture$QueueRunner.oneJob(CurrentTaskFuture.java:1162)
+	at org.glassfish.hk2.runlevel.internal.CurrentTaskFuture$QueueRunner.run(CurrentTaskFuture.java:1147)
+	at org.glassfish.hk2.runlevel.internal.CurrentTaskFuture$UpOneLevel.run(CurrentTaskFuture.java:753)
+	at weblogic.work.SelfTuningWorkManagerImpl$WorkAdapterImpl.run(SelfTuningWorkManagerImpl.java:553)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:311)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:263)
+
+> 
+<Mar 24, 2016 12:51:29 AM GMT+03:00> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to FAILED.> 
+<Mar 24, 2016 12:51:29 AM GMT+03:00> <Error> <WebLogicServer> <BEA-000383> <A critical service failed. The server will shut itself down.> 
+<Mar 24, 2016 12:51:29 AM GMT+03:00> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to FORCE_SHUTTING_DOWN.> 
+Stopping Derby server...
+Derby server stopped.
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <INFO> <NodeManager> <The server 'AdminServer' with process id 22118 is no longer alive; waiting for the process to die.>
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <FINEST> <NodeManager> <Process died.>
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <INFO> <NodeManager> <Server failed during startup and will be retried>
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <FINEST> <NodeManager> <get latest startup configuration before deciding/trying to restart the server>
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <INFO> <NodeManager> <Server failed so attempting to restart (restart count = 1)>

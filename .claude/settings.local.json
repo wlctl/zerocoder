@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod +x sh/start-la.sh sh/stop-la.sh sh/status-la.sh)",
+      "Bash(sh -n sh/start-la.sh)",
+      "Bash(sh -n sh/stop-la.sh)",
+      "Bash(sh -n sh/status-la.sh)",
+      "Bash(sh/status-la.sh)",
+      "Bash(sh/start-la.sh)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(sh/stop-la.sh)",
+      "Bash(ps -eo pid,comm,args)",
+      "Bash(awk '$3 ~ /devagent$/ || /\\\\/build\\\\/devagent/ {print}')",
+      "Bash(/usr/local/go/bin/go build *)",
+      "Bash(/usr/local/go/bin/go vet *)",
+      "Bash(/usr/local/go/bin/go test *)",
+      "Bash(gofmt -l .)",
+      "Bash(python3 -c \"import json,sys; json.load\\(open\\('settings.local.json'\\)\\); print\\('settings.local.json: valid'\\)\")",
+      "Bash(awk '/\\\\/build\\\\/devagent/ && !/awk|ps -eo/ {print}')",
+      "Bash(unzip -l release/dist/la-0.3.0.zip)",
+      "Bash(/usr/local/go/bin/go version *)",
+      "Bash(npx ng *)",
+      "Bash(sh sh/make-dist.sh)",
+      "Bash(/usr/local/go/bin/go -C /home/irav/myai/dev-agent/release/backend/go test -race ./internal/server/ -run TestCorrelate -v)",
+      "Bash(/usr/local/go/bin/go -C /home/irav/myai/dev-agent/release/backend/go build ./...)",
+      "Bash(/usr/local/go/bin/go -C /home/irav/myai/dev-agent/release/backend/go vet ./...)",
+      "Bash(/usr/local/go/bin/go -C /home/irav/myai/dev-agent/release/backend/go test -race ./...)",
+      "Bash(/usr/local/go/bin/gofmt -l .)",
+      "Bash(/usr/local/go/bin/gofmt -w internal/server/handlers_viewer.go)",
+      "Bash(sh/make-dist.sh)",
+      "Bash(python3 *)",
+      "Bash(gh repo *)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git diff *)",
+      "Bash(xargs -0 -I{} sh -c 'test -f \"{}\" && du -h \"{}\" 2>/dev/null')",
+      "Bash(grep -iE '\\\\.\\(zip|so|exe|db|pyc\\)$|node_modules|/dist/|la\\\\.conf$|la\\\\.db')",
+      "Bash(git rm *)"
+    ]
+  }
+}

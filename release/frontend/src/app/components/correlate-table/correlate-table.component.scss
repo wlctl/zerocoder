@@ -1,0 +1,43 @@
+:host { display: block; }
+.correlate {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0.75rem;
+  background: #fff;
+}
+.correlate__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.correlate__title { display: flex; flex-direction: column; gap: 0.15rem; }
+.correlate__name { font-weight: 600; }
+.correlate__actions { display: flex; gap: 0.25rem; }
+.correlate__pagesize { margin: 0.25rem 0; font-size: 0.85rem; }
+
+.col-ts { width: 11rem; white-space: nowrap; }
+.col-file { width: 10rem; white-space: nowrap; }
+.col-level { width: 5rem; }
+.col-comp { width: 9rem; }
+.col-raw { max-width: 22rem; }
+.col-pin { width: 2.5rem; text-align: center; }
+.pin-btn { background: none; border: none; cursor: pointer; font-size: 0.9rem; padding: 0; line-height: 1; }
+
+.file-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+.file-name { font-size: 0.82rem; font-weight: 600; }
+
+.correlate__pager {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}

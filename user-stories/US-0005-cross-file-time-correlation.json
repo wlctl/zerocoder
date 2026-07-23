@@ -1,0 +1,96 @@
+{
+  "id": "US-0005",
+  "title": "Корреляция событий по времени между файлами (общий таймлайн)",
+  "status": "ready",
+  "priority": "should",
+  "domain": "viewer",
+  "project": [
+    "backend",
+    "frontend"
+  ],
+  "target": [
+    "go",
+    "angular"
+  ],
+  "spec_ref": "architect/specs/viewer.spec.md",
+  "created": "2026-07-24",
+  "updated": "2026-07-24",
+  "asRole": "аналитик тех.поддержки",
+  "wantGoal": "видеть события из нескольких выбранных файлов загрузки на едином таймлайне, выровненном по timestamp",
+  "soValue": "находить связанные события в разных лог-файлах по времени (событие в серверном логе и ошибка в логе приложения в тот же момент)",
+  "context": "Расширение домена viewer поверх US-0003/US-0004. Одна загрузка (zip или несколько файлов) = 1->N t_files_analyze. Существующие пофайловые таблицы и search (сортировка по file_analyze_id, seq) не выстраивают события разных файлов по времени. Нужно объединённое представление: записи из выбранных файлов, отсортированные по ts кросс-файл, с пометкой файла. Источник — SQLite (MVP). Go первичен; Python — полный функционал по запросу. Контракт — architect/specs/viewer.spec.md (correlate).",
+  "deliverables": [
+    "GET /api/uploads/{id}/correlate?files=&from=&to=&q=&level=&limit=&offset= — объединённый поток записей, ORDER BY ts IS NULL, ts, seq кросс-файл, с file_analyze_id и filename (JOIN t_files_analyze); конверт {items,total,limit,offset}",
+    "Frontend: режим «Корреляция (общий таймлайн)» в просмотрщике — объединённая таблица (ts | файл-цвет | level | component | message | raw) по выбранным файлам + таймлайн-окно + поиск + подкраска; пагинация; общий график /histogram?files=...",
+    "Цвет файлов — стабильная палитра по индексу"
+  ],
+  "acceptanceCriteria": [
+    {
+      "id": "AC-1",
+      "criterion": "GET /api/uploads/{id}/correlate возвращает записи из нескольких файлов, отсортированные по ts кросс-файл (NULL ts — в конце), каждая с file_analyze_id и filename; конверт {items,total,limit,offset}",
+      "verified": true
+    },
+    {
+      "id": "AC-2",
+      "criterion": "correlate поддерживает фильтры files (subset), from/to (ts-окно), q (LIKE по полям), level; пагинация limit/offset (limit <= 1000)",
+      "verified": true
+    },
+    {
+      "id": "AC-3",
+      "criterion": "correlate ограничен рамками одной загрузки (upload_id); пустая выборка -> {items:[], total:0, ...}",
+      "verified": true
+    },
+    {
+      "id": "AC-4",
+      "criterion": "Frontend — переключатель «Корреляция» показывает объединённую таблицу по выбранным файлам с колонкой «файл» (цветовая метка, стабильная per файла); записи упорядочены по ts; пагинация",
+      "verified": true
+    },
+    {
+      "id": "AC-5",
+      "criterion": "В режиме корреляции применяются таймлайн-окно (from/to), активный поиск (q) и подкраска (highlights); над таблицей — общий график (/histogram?files=...)",
+      "verified": true
+    },
+    {
+      "id": "AC-6",
+      "criterion": "go build/vet/gofmt/test -race зелёные; тест на /correlate (2 файла, порядок по ts, filename, фильтры) — изоляция t.TempDir(); ng build/ng test зелёные",
+      "verified": true
+    },
+    {
+      "id": "AC-7",
+      "criterion": "la.conf — без новых обязательных полей; лимиты — дефолты в коде",
+      "verified": true
+    }
+  ],
+  "nonFunctionalRequirements": [
+    "Объединённый поток — серверная сортировка по ts (индекс idx_log_entries_ts); JOIN за имя файла; лимит записей",
+    "Записи без ts не теряются (в конце потока), но на общий график не попадают (histogram фильтрует ts IS NOT NULL)",
+    "Секреты не в репозитории",
+    "Python-релиз — тот же эндпоинт/контракт (полный функционал по запросу)",
+    "Go-плагины (парсеры/постобработчики) — не затрагиваются"
+  ],
+  "dependencies": [
+    "US-0002",
+    "US-0003",
+    "US-0004"
+  ],
+  "openQuestions": [
+    "Стекированный по файлам график (вместо суммарного) — на потом (MVP: суммарный histogram?files=...)",
+    "FTS5/регулярки для q — отдельная ЮС (MVP: LIKE)",
+    "Цветовая палитра файлов — детерминированная по индексу (расширяемо)"
+  ],
+  "trace": {
+    "spec": "architect/specs/viewer.spec.md",
+    "code": [
+      "release/backend/go/internal/server/handlers_viewer.go (getCorrelate)",
+      "release/backend/go/internal/server/server.go (route)",
+      "release/frontend/src/app/pages/viewer/viewer.component.* (correlate mode)",
+      "release/frontend/src/app/components/correlate-table/correlate-table.component.*"
+    ],
+    "tests": [
+      "release/backend/go/internal/server/api_test.go",
+      "release/frontend/src/app/components/correlate-table/correlate-table.component.spec.ts"
+    ],
+    "changelog": "changelog/CHANGELOG.md#0.5.0",
+    "release": "release/backend/go/build/devagent (0.5.0)"
+  }
+}

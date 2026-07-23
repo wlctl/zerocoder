@@ -1,0 +1,123 @@
+##### 24/03/2016 00:43:51:827 Starting NodeManager...
+NODEMGR_HOME is already set to /soft/wls/nm
+CLASSPATH=/soft/wls/jdk/lib/tools.jar:/soft/wls/1213/wlserver/server/lib/weblogic_sp.jar:/soft/wls/1213/wlserver/server/lib/weblogic.jar:/soft/wls/1213/oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b3/lib/ant-contrib.jar:/soft/wls/1213/wlserver/modules/features/oracle.wls.common.nodemanager_2.0.0.0.jar::/soft/wls/1213
++ /soft/wls/jdk/bin/java -server -Xms32m -Xmx200m -XX:MaxPermSize=128m -Dweblogic.RootDirectory=/soft/wls/nm -Dcoherence.home=/soft/wls/1213/coherence -Dbea.home=/soft/wls/1213 -Xverify:none -Djava.endorsed.dirs=/soft/wls/jdk/jre/lib/endorsed:/soft/wls/1213/oracle_common/modules/endorsed -Djava.security.policy=/soft/wls/1213/wlserver/server/lib/weblogic.policy -Dweblogic.nodemanager.JavaHome=/soft/wls/jdk -DListenAddress=192.168.0.223 -DListenPort=5556 weblogic.NodeManager -v
+<Mar 24, 2016 12:43:52 AM GMT+03:00> <INFO> <Loading domains file: /soft/wls/nm/nodemanager.domains>
+<Mar 24, 2016 12:43:52 AM GMT+03:00> <INFO> <Loaded NodeManager configuration properties from '/soft/wls/nm/nodemanager.properties'>
+Node manager v12.1.3
+
+Configuration settings:
+
+DomainsFile=/soft/wls/nm/nodemanager.domains
+LogLimit=0
+DomainsDirRemoteSharingEnabled=false
+AuthenticationEnabled=true
+LogLevel=INFO
+DomainsFileEnabled=true
+ListenAddress=192.168.0.223
+NativeVersionEnabled=true
+ProcessDestroyTimeout=20000
+ListenPort=5556
+LogToStderr=true
+weblogic.StartScriptName=startWebLogic.sh
+SecureListener=false
+LogCount=1
+QuitEnabled=true
+LogAppend=true
+weblogic.StopScriptEnabled=false
+StateCheckInterval=500
+CrashRecoveryEnabled=false
+weblogic.StartScriptEnabled=true
+LogFile=/soft/wls/nm/nodemanager.log
+LogFormatter=weblogic.nodemanager.server.LogFormatter
+coherence.StartScriptEnabled=false
+ListenBacklog=50
+NodeManagerHome=/soft/wls/nm
+weblogic.startup.JavaHome=/soft/wls/jdk
+weblogic.startup.MW_Home=
+coherence.startup.JavaHome=/soft/wls/jdk
+coherence.startup.MW_Home=
+
+Domain name mappings:
+
+wl_server -> /soft/wls/dev/user_projects/domains/wl_server
+prodDomain -> /soft/wls/prod/user_projects/domains/prodDomain
+
+<Mar 24, 2016 12:43:52 AM GMT+03:00> <INFO> <WebLogic Server 12.1.3.0.0  Wed May 21 18:53:34 PDT 2014 1604337 >
+<Mar 24, 2016 12:43:52 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Startup configuration properties loaded from "/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/data/nodemanager/startup.properties">
+<Mar 24, 2016 12:43:52 AM GMT+03:00> <INFO> <Plain socket listener started on port 5556, host admin.wls>
+<Mar 24, 2016 12:45:36 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Rotated server output log to "/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out00003">
+<Mar 24, 2016 12:45:36 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server error log also redirected to server log>
+<Mar 24, 2016 12:45:36 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Starting WebLogic server with command line: /soft/wls/dev/user_projects/domains/wl_server/bin/startWebLogic.sh >
+<Mar 24, 2016 12:45:36 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Working directory is '/soft/wls/dev/user_projects/domains/wl_server'>
+<Mar 24, 2016 12:45:36 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server output log file is '/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out'>
+<Mar 24, 2016 12:45:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <The server 'AdminServer' with process id 19583 is no longer alive; waiting for the process to die.>
+<Mar 24, 2016 12:45:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed during startup and will be retried>
+<Mar 24, 2016 12:45:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed so attempting to restart (restart count = 1)>
+<Mar 24, 2016 12:45:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Rotated server output log to "/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out00004">
+<Mar 24, 2016 12:45:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server error log also redirected to server log>
+<Mar 24, 2016 12:45:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Starting WebLogic server with command line: /soft/wls/dev/user_projects/domains/wl_server/bin/startWebLogic.sh >
+<Mar 24, 2016 12:45:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Working directory is '/soft/wls/dev/user_projects/domains/wl_server'>
+<Mar 24, 2016 12:45:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server output log file is '/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out'>
+<Mar 24, 2016 12:45:43 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <The server 'AdminServer' with process id 19748 is no longer alive; waiting for the process to die.>
+<Mar 24, 2016 12:45:43 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed during startup and will be retried>
+<Mar 24, 2016 12:45:43 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed so attempting to restart (restart count = 2)>
+<Mar 24, 2016 12:45:43 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Rotated server output log to "/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out00005">
+<Mar 24, 2016 12:45:43 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server error log also redirected to server log>
+<Mar 24, 2016 12:45:43 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Starting WebLogic server with command line: /soft/wls/dev/user_projects/domains/wl_server/bin/startWebLogic.sh >
+<Mar 24, 2016 12:45:43 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Working directory is '/soft/wls/dev/user_projects/domains/wl_server'>
+<Mar 24, 2016 12:45:43 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server output log file is '/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out'>
+<Mar 24, 2016 12:45:47 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <The server 'AdminServer' with process id 19911 is no longer alive; waiting for the process to die.>
+<Mar 24, 2016 12:45:47 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed during startup and will be retried>
+<Mar 24, 2016 12:45:47 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed but will not be restarted because the maximum number of restart attempts has been exceeded>
+<Mar 24, 2016 12:45:47 AM GMT+03:00> <WARNING> <Server start command for WebLogic server 'AdminServer' failed due to: [Server failed to start up but Node Manager was not aware of the reason]. Please check Node Manager log and/or server 'AdminServer' log for detailed information.>
+<Mar 24, 2016 12:50:35 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Rotated server output log to "/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out00006">
+<Mar 24, 2016 12:50:35 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server error log also redirected to server log>
+<Mar 24, 2016 12:50:35 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Starting WebLogic server with command line: /soft/wls/dev/user_projects/domains/wl_server/bin/startWebLogic.sh >
+<Mar 24, 2016 12:50:35 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Working directory is '/soft/wls/dev/user_projects/domains/wl_server'>
+<Mar 24, 2016 12:50:35 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server output log file is '/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out'>
+<Mar 24, 2016 12:50:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <The server 'AdminServer' with process id 21513 is no longer alive; waiting for the process to die.>
+<Mar 24, 2016 12:50:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed during startup and will be retried>
+<Mar 24, 2016 12:50:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed so attempting to restart (restart count = 1)>
+<Mar 24, 2016 12:50:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Rotated server output log to "/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out00007">
+<Mar 24, 2016 12:50:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server error log also redirected to server log>
+<Mar 24, 2016 12:50:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Starting WebLogic server with command line: /soft/wls/dev/user_projects/domains/wl_server/bin/startWebLogic.sh >
+<Mar 24, 2016 12:50:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Working directory is '/soft/wls/dev/user_projects/domains/wl_server'>
+<Mar 24, 2016 12:50:39 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server output log file is '/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out'>
+<Mar 24, 2016 12:50:42 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <The server 'AdminServer' with process id 21673 is no longer alive; waiting for the process to die.>
+<Mar 24, 2016 12:50:42 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed during startup and will be retried>
+<Mar 24, 2016 12:50:42 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed so attempting to restart (restart count = 2)>
+<Mar 24, 2016 12:50:42 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Rotated server output log to "/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out00008">
+<Mar 24, 2016 12:50:42 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server error log also redirected to server log>
+<Mar 24, 2016 12:50:42 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Starting WebLogic server with command line: /soft/wls/dev/user_projects/domains/wl_server/bin/startWebLogic.sh >
+<Mar 24, 2016 12:50:42 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Working directory is '/soft/wls/dev/user_projects/domains/wl_server'>
+<Mar 24, 2016 12:50:42 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server output log file is '/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out'>
+<Mar 24, 2016 12:50:46 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <The server 'AdminServer' with process id 21840 is no longer alive; waiting for the process to die.>
+<Mar 24, 2016 12:50:46 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed during startup and will be retried>
+<Mar 24, 2016 12:50:46 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed but will not be restarted because the maximum number of restart attempts has been exceeded>
+<Mar 24, 2016 12:50:46 AM GMT+03:00> <WARNING> <Server start command for WebLogic server 'AdminServer' failed due to: [Server failed to start up but Node Manager was not aware of the reason]. Please check Node Manager log and/or server 'AdminServer' log for detailed information.>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Startup configuration properties saved to "/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/data/nodemanager/startup.properties">
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server error log also redirected to server log>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Starting WebLogic server with command line: /soft/wls/dev/user_projects/domains/wl_server/bin/startWebLogic.sh >
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Working directory is '/soft/wls/dev/user_projects/domains/wl_server'>
+<Mar 24, 2016 12:51:26 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server output log file is '/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out'>
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <The server 'AdminServer' with process id 22118 is no longer alive; waiting for the process to die.>
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed during startup and will be retried>
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed so attempting to restart (restart count = 1)>
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Rotated server output log to "/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out00001">
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server error log also redirected to server log>
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Starting WebLogic server with command line: /soft/wls/dev/user_projects/domains/wl_server/bin/startWebLogic.sh >
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Working directory is '/soft/wls/dev/user_projects/domains/wl_server'>
+<Mar 24, 2016 12:51:30 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server output log file is '/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out'>
+<Mar 24, 2016 12:51:34 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <The server 'AdminServer' with process id 22284 is no longer alive; waiting for the process to die.>
+<Mar 24, 2016 12:51:34 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed during startup and will be retried>
+<Mar 24, 2016 12:51:34 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed so attempting to restart (restart count = 2)>
+<Mar 24, 2016 12:51:34 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Rotated server output log to "/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out00002">
+<Mar 24, 2016 12:51:34 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server error log also redirected to server log>
+<Mar 24, 2016 12:51:34 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Starting WebLogic server with command line: /soft/wls/dev/user_projects/domains/wl_server/bin/startWebLogic.sh >
+<Mar 24, 2016 12:51:34 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Working directory is '/soft/wls/dev/user_projects/domains/wl_server'>
+<Mar 24, 2016 12:51:34 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server output log file is '/soft/wls/dev/user_projects/domains/wl_server/servers/AdminServer/logs/AdminServer.out'>
+<Mar 24, 2016 12:51:37 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <The server 'AdminServer' with process id 22459 is no longer alive; waiting for the process to die.>
+<Mar 24, 2016 12:51:37 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed during startup and will be retried>
+<Mar 24, 2016 12:51:37 AM GMT+03:00> <INFO> <wl_server> <AdminServer> <Server failed but will not be restarted because the maximum number of restart attempts has been exceeded>
+<Mar 24, 2016 12:51:37 AM GMT+03:00> <WARNING> <Server start command for WebLogic server 'AdminServer' failed due to: [Server failed to start up but Node Manager was not aware of the reason]. Please check Node Manager log and/or server 'AdminServer' log for detailed information.>
