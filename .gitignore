@@ -30,8 +30,10 @@ release/frontend/dist/
 release/frontend/node_modules/
 release/frontend/.angular/
 
-# ZIP-дистрибутивы (артефакт sh/make-dist.sh)
-release/dist/
+# ZIP-дистрибутивы (артефакт sh/make-dist.sh) — трекаем только latest и текущий релиз
+release/dist/*
+!release/dist/la-latest.zip
+!release/dist/la-0.6.0.zip
 
 # Прочее
 *.log

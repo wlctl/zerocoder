@@ -103,6 +103,52 @@ dev-agent/
 
 Процесс разработки ведётся по потоку **user-stories → architect → code → build**: каждая пользовательская история хранится в двух форматах, спецификации (`architect/specs/`) — источник истины для архитектуры, трассировка `спецификация → код → бинарник` — в `architect/manifest.md`. Подробнее — в [CLAUDE.md](CLAUDE.md).
 
+## Установка latest из GitHub (curl)
+
+Готовый ZIP-дистрибутив хранится в репозитории (`release/dist/la-latest.zip` —
+синхронизирован с актуальным релизом; `release/dist/la-0.6.0.zip` — версия-имя).
+Скачать и запустить одной цепочкой:
+
+```sh
+# скачать актуальный дистрибутив
+curl -L -o la-latest.zip https://github.com/wlctl/zerocoder/raw/main/release/dist/la-latest.zip
+
+# распаковать
+unzip la-latest.zip -d la
+cd la/la-0.6.0            # каталог внутри ZIP — la-<version>
+
+# старт (при первом запуске создастся la.conf + SQLite la.db, применятся миграции,
+# подгрузятся .so-плагины, стартует веб-сервер)
+sh/start-la.sh
+
+# проверить
+curl http://localhost:8888/healthz     # -> {"status":"ok"}
+```
+
+Открыть в браузере `http://localhost:8888`.
+
+Управление процессом:
+```sh
+sh/status-la.sh     # RUNNING / STOPPED
+sh/stop-la.sh       # останов
+```
+
+Обновление до новой версии — перескачать `la-latest.zip` и перезапустить процесс
+(плагины/бинарник заменяются; `la.db` и `la.conf` сохраняются):
+```sh
+sh/stop-la.sh
+curl -L -o la-latest.zip https://github.com/wlctl/zerocoder/raw/main/release/dist/la-latest.zip
+unzip -o la-latest.zip -d la-new
+cd la-new/la-0.6.0 && sh/start-la.sh
+```
+
+> Альтернативные URL того же файла:
+> `https://raw.githubusercontent.com/wlctl/zerocoder/main/release/dist/la-latest.zip`
+> или конкретная версия `…/release/dist/la-0.6.0.zip`.
+>
+> Требования к ПК: **Linux** (Go-плагины `.so` — Linux-only), `curl`/`unzip`/`sh`.
+> Внешних зависимостей нет — Node.js, сервер БД и инсталлятор не нужны.
+
 ## Быстрый старт (из дистрибутива)
 
 1. Распакуйте ZIP `la-<version>.zip` в любой каталог.
